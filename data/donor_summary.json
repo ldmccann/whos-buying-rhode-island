@@ -27334,8 +27334,8 @@
       "chamber": "House",
       "district": "57",
       "party": "Democrat",
-      "donor_count": 98,
-      "total_amount": 58895.0,
+      "donor_count": 103,
+      "total_amount": 62645.0,
       "donors": [
         {
           "name": "Badway, Thomas E",
@@ -27408,6 +27408,18 @@
           "total_amount": 2000.0,
           "first_contribution": "02/13/2026",
           "last_contribution": "10/18/2024"
+        },
+        {
+          "name": "RI ALLIANCE SSE SEIU COPE (Social Service Employees)",
+          "first_name": "",
+          "last_name": "RI ALLIANCE SSE SEIU COPE (Social Service Employees)",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 2000.0,
+          "first_contribution": "08/19/2026",
+          "last_contribution": "08/19/2026"
         },
         {
           "name": "Kazarian, Katherine",
@@ -27686,6 +27698,42 @@
           "last_contribution": "04/25/2026"
         },
         {
+          "name": "RI FEDERATION OF TEACHERS COPE PAC",
+          "first_name": "",
+          "last_name": "RI FEDERATION OF TEACHERS COPE PAC",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 2,
+          "total_amount": 600.0,
+          "first_contribution": "05/08/2025",
+          "last_contribution": "08/19/2026"
+        },
+        {
+          "name": "Farrell, William",
+          "first_name": "William",
+          "last_name": "Farrell",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "William Farrell & Associates",
+          "contribution_count": 3,
+          "total_amount": 550.0,
+          "first_contribution": "01/02/2025",
+          "last_contribution": "12/30/2025"
+        },
+        {
+          "name": "Jerzyk, Matthew",
+          "first_name": "Matthew",
+          "last_name": "Jerzyk",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "William A Farrell & Associates LLC",
+          "contribution_count": 3,
+          "total_amount": 550.0,
+          "first_contribution": "08/03/2026",
+          "last_contribution": "12/30/2025"
+        },
+        {
           "name": "Bigelow, Dennis",
           "first_name": "Dennis",
           "last_name": "Bigelow",
@@ -27902,18 +27950,6 @@
           "last_contribution": "10/18/2024"
         },
         {
-          "name": "Jerzyk, Matthew",
-          "first_name": "Matthew",
-          "last_name": "Jerzyk",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "William A Farrell & Associates LLC",
-          "contribution_count": 2,
-          "total_amount": 350.0,
-          "first_contribution": "08/03/2026",
-          "last_contribution": "12/30/2025"
-        },
-        {
           "name": "Kane, Karen A",
           "first_name": "Karen",
           "last_name": "Kane",
@@ -27998,18 +28034,6 @@
           "last_contribution": "10/10/2024"
         },
         {
-          "name": "Farrell, William",
-          "first_name": "William",
-          "last_name": "Farrell",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "William Farrell & Associates",
-          "contribution_count": 2,
-          "total_amount": 300.0,
-          "first_contribution": "01/02/2025",
-          "last_contribution": "12/30/2025"
-        },
-        {
           "name": "McMahon, Francis",
           "first_name": "Francis",
           "last_name": "McMahon",
@@ -28058,6 +28082,18 @@
           "last_contribution": "12/30/2025"
         },
         {
+          "name": "AMICA / RI PAC",
+          "first_name": "",
+          "last_name": "AMICA / RI PAC",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 250.0,
+          "first_contribution": "08/19/2026",
+          "last_contribution": "08/19/2026"
+        },
+        {
           "name": "COX PAC: COMMITTEE FOR FAIR BROADBAND COMPETITION",
           "first_name": "",
           "last_name": "COX PAC: COMMITTEE FOR FAIR BROADBAND COMPETITION",
@@ -28068,6 +28104,18 @@
           "total_amount": 250.0,
           "first_contribution": "10/28/2024",
           "last_contribution": "10/28/2024"
+        },
+        {
+          "name": "DISTRICT 1199 SEIU POLITICAL ACTION COMMITTEE-RI",
+          "first_name": "",
+          "last_name": "DISTRICT 1199 SEIU POLITICAL ACTION COMMITTEE-RI",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 250.0,
+          "first_contribution": "08/19/2026",
+          "last_contribution": "08/19/2026"
         },
         {
           "name": "Fede, Nicholas",
@@ -28298,6 +28346,18 @@
           "last_contribution": "09/22/2022"
         },
         {
+          "name": "RI LABORERS' PUBLIC EMPLOYEES PAC",
+          "first_name": "",
+          "last_name": "RI LABORERS' PUBLIC EMPLOYEES PAC",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 200.0,
+          "first_contribution": "08/19/2026",
+          "last_contribution": "08/19/2026"
+        },
+        {
           "name": "Ruggerio, Dominick",
           "first_name": "Dominick",
           "last_name": "Ruggerio",
@@ -28406,16 +28466,16 @@
           "last_contribution": "05/08/2025"
         },
         {
-          "name": "RI FEDERATION OF TEACHERS COPE PAC",
+          "name": "RI COLLEGE/AFT COPE",
           "first_name": "",
-          "last_name": "RI FEDERATION OF TEACHERS COPE PAC",
+          "last_name": "RI COLLEGE/AFT COPE",
           "address": "",
           "city_state_zip": "",
           "employer": "",
           "contribution_count": 1,
           "total_amount": 100.0,
-          "first_contribution": "05/08/2025",
-          "last_contribution": "05/08/2025"
+          "first_contribution": "08/19/2026",
+          "last_contribution": "08/19/2026"
         },
         {
           "name": "RI LABORER'S POLITICAL LEAGUE",
@@ -166626,7 +166686,7 @@
           "last_name": "Shea",
           "address": "",
           "city_state_zip": "",
-          "employer": "Butler Hospital",
+          "employer": "Brown University Health",
           "contribution_count": 2,
           "total_amount": 350.0,
           "first_contribution": "05/30/2026",
@@ -167821,8 +167881,8 @@
           "last_contribution": "06/29/2026"
         },
         {
-          "name": "Ryder, Mary",
-          "first_name": "Mary",
+          "name": "Ryder, MaryBeth",
+          "first_name": "MaryBeth",
           "last_name": "Ryder",
           "address": "",
           "city_state_zip": "",
