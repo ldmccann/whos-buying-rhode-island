@@ -1,0 +1,4404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Who's Buying Rhode Island?</title>
+
+  <style>
+.node-view {
+  min-height: calc(100vh - 80px);
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.node-view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.node-view-header h1 {
+  margin: 0 0 6px 0;
+}
+
+.node-view-header p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+.node-canvas {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 190px);
+  min-height: 600px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+#network-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+#network-svg:active {
+  cursor: grabbing;
+}
+
+.network-edge {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  opacity: 0.25;
+  transition:
+    opacity 0.2s ease,
+    stroke-width 0.2s ease;
+}
+
+.network-edge.active {
+  opacity: 0.9;
+  stroke-width: 3;
+}
+
+.network-node-group {
+  cursor: pointer;
+}
+
+.network-node-circle {
+  stroke: currentColor;
+  stroke-width: 2;
+  transition:
+    r 0.2s ease,
+    opacity 0.2s ease,
+    stroke-width 0.2s ease;
+}
+
+.network-node-group:hover .network-node-circle {
+  stroke-width: 4;
+}
+
+.network-node-label {
+  pointer-events: none;
+  user-select: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.network-node-amount {
+  pointer-events: none;
+  user-select: none;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.network-node-group.dimmed {
+  opacity: 0.18;
+}
+
+.network-node-group.selected
+.network-node-circle {
+  stroke-width: 4;
+}
+
+.candidate-info {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.candidate-info .candidate-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.candidate-info .candidate-communities {
+  margin-top: 3px;
+}
+
+.candidate-info a {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 24px 32px;
+    }
+
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 0;
+      color: #666;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .card-label {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .card-value {
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .dashboard-panel {
+      overflow: hidden;
+    }
+
+    .dashboard-panel.timeline-panel {
+      grid-column: 1 / -1;
+    }
+
+    .breakdown {
+      padding: 20px;
+    }
+
+    .breakdown-item {
+      margin-bottom: 24px;
+    }
+
+    .breakdown-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .breakdown-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .breakdown-label span {
+      color: #555;
+    }
+
+    .breakdown-label strong {
+      font-size: 18px;
+    }
+
+    .bar {
+      height: 10px;
+      background: #eee;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #222;
+      transition: width 0.3s ease;
+    }
+
+    .breakdown-meta {
+      margin-top: 6px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .top-contributors {
+      padding: 0 20px 20px;
+    }
+
+    .top-contributor {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .top-contributor:last-child {
+      border-bottom: none;
+    }
+
+    .top-contributor-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .top-contributor-amount {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .timeline {
+      padding: 20px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 90px;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .timeline-bar {
+      height: 18px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .timeline-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #222;
+    }
+
+    .timeline-amount {
+      text-align: right;
+      font-weight: 600;
+      font-size: 14px;
+    }
+.filters {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+.filters h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+.date-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.date-range-slider {
+  position: relative;
+  height: 36px;
+  margin: 0 8px;
+}
+
+.date-range-track,
+.date-range-fill {
+  position: absolute;
+  top: 15px;
+  height: 6px;
+  border-radius: 999px;
+}
+
+.date-range-track {
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+.date-range-fill {
+  left: 0;
+  right: 0;
+  background: #222;
+}
+
+.date-range-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  pointer-events: none;
+  appearance: none;
+  background: none;
+}
+
+.date-range-input::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #222;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #999;
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.date-range-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #222;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px #999;
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.date-range-summary {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 12px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: white;
+      font: inherit;
+    }
+
+    .filter-row {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-row input[type="checkbox"] {
+      width: auto;
+    }
+
+    .results-count {
+      margin-top: 14px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .panel-header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background: #fafafa;
+      font-size: 13px;
+      color: #666;
+    }
+
+    td.amount {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    th.amount {
+      text-align: right;
+    }
+
+    .incomplete {
+      color: #b45309;
+      font-weight: 600;
+      display: block;
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .empty {
+      padding: 40px;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 800px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-panel.timeline-panel {
+        grid-column: auto;
+      }
+
+      .timeline-row {
+        grid-template-columns: 65px 1fr 75px;
+      }
+
+    @media (max-width: 500px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .filter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        padding: 0 12px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+    }
+    .donor-profile {
+      margin-top: 24px;
+    }
+
+    .donor-profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .donor-profile-header h2 {
+      margin-bottom: 6px;
+    }
+
+    #donor-summary {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .donor-link {
+      border: 0;
+      padding: 0;
+      background: none;
+      color: #222;
+      font: inherit;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: #bbb;
+      text-underline-offset: 3px;
+    }
+
+    .donor-link:hover {
+      text-decoration-color: #222;
+    }
+
+.campaign-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+}
+
+.campaign-link:hover {
+  text-decoration: underline;
+}
+
+    .close-button {
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font: inherit;
+      cursor: pointer;
+    }
+
+.header-button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  background: #f5f5f5;
+}
+
+    .close-button:hover {
+      background: #f5f5f5;
+    }
+
+    .donor-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+.campaigns-supported {
+  margin: 24px 0;
+}
+
+.campaign-supported-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.campaign-supported-row > div:first-child > div {
+  color: #666;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+    .donor-detail {
+      background: #fafafa;
+      border-radius: 6px;
+      padding: 14px;
+    }
+
+    .donor-detail-label {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .donor-detail-value {
+      font-weight: 600;
+    }
+
+    .donor-history {
+      padding: 20px;
+    }
+
+    .donor-history h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+.candidate-funding {
+  margin-top: 24px;
+}
+
+.candidate-funding h3 {
+  margin-bottom: 12px;
+}
+
+.funding-bar {
+  display: flex;
+  width: 100%;
+  height: 34px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e5e5e5;
+  border: 1px solid #ccc;
+}
+
+.funding-bar-individual,
+.funding-bar-pac {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  transition: width 0.3s ease;
+}
+
+.funding-bar-individual {
+  background: #777;
+}
+
+.funding-bar-pac {
+  background: #aaa;
+}
+
+.funding-legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.funding-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.funding-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.funding-dot.individual {
+  background: #777;
+}
+
+.funding-dot.pac {
+  background: #aaa;
+}
+
+@media (max-width: 600px) {
+  .funding-legend {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+    @media (max-width: 600px) {
+      .donor-details {
+        grid-template-columns: 1fr;
+      }
+
+      .donor-profile-header {
+        flex-direction: column;
+      }
+    }
+/* =========================================================
+   CANDIDATE FUNDING NETWORK
+   ========================================================= */
+
+.candidate-network-section {
+  margin-top: 2rem;
+}
+
+.network-description {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.candidate-network {
+  position: relative;
+  min-height: 420px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.network-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  padding: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+.network-candidate {
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  background: #222;
+  color: white;
+  font-size: 1rem;
+}
+
+.network-donor {
+  width: 105px;
+  height: 105px;
+  background: white;
+  border: 2px solid #bbb;
+  font-size: 0.8rem;
+}
+
+.network-donor-amount {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 3;
+  background: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.network-line {
+  position: absolute;
+  height: 2px;
+  background: #aaa;
+  transform-origin: left center;
+  z-index: 1;
+}
+
+.network-node-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+.network-node-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .candidate-network {
+    min-height: 650px;
+  }
+
+  .network-candidate {
+    width: 120px;
+    height: 120px;
+  }
+
+  .network-donor {
+    width: 85px;
+    height: 85px;
+    font-size: 0.7rem;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="site-title">Who's Buying Rhode Island?</h1>
+
+  <div style="margin-top: 16px;">
+    <label for="candidate-select">
+      <strong>Candidate</strong>
+    </label>
+
+    <select
+      id="candidate-select"
+      style="margin-top: 6px; max-width: 500px;"
+    >
+      <option value="">Select a candidate...</option>
+    </select>
+  </div>
+
+  <p id="site-subtitle" style="margin-top: 12px;">
+    Select a candidate to view campaign finance activity.
+  </p>
+
+<button
+  type="button"
+  id="node-view-button"
+  class="header-button"
+>
+  Switch to Node View
+</button>
+
+</header>
+
+<main>
+<section
+  id="node-view"
+  class="node-view"
+  hidden
+>
+  <div class="node-view-header">
+    <div>
+      <h1>Funding Network</h1>
+      <p>
+        Explore the relationships between candidates,
+        donors, and PACs.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      id="exit-node-view"
+      class="header-button"
+    >
+      Back to Dashboard
+    </button>
+  </div>
+
+<div
+  id="node-canvas"
+  class="node-canvas"
+>
+  <svg
+    id="network-svg"
+    width="100%"
+    height="100%"
+    aria-label="Campaign finance network"
+  ></svg>
+</div>
+
+</section>
+
+<section class="filters">
+
+  <h2>Filter by Date</h2>
+
+  <div class="date-range-labels">
+    <span id="start-date-label">01/01/2020</span>
+    <span id="end-date-label">12/31/2026</span>
+  </div>
+
+  <div class="date-range-slider">
+
+    <div class="date-range-track"></div>
+
+    <div
+      id="date-range-fill"
+      class="date-range-fill"
+    ></div>
+
+    <input
+      id="start-date"
+      class="date-range-input"
+      type="range"
+      min="0"
+      max="2556"
+      value="0"
+      step="1"
+    >
+
+    <input
+      id="end-date"
+      class="date-range-input"
+      type="range"
+      min="0"
+      max="2556"
+      value="2556"
+      step="1"
+    >
+
+  </div>
+
+  <div
+    class="date-range-summary"
+    id="date-range-summary"
+  >
+    January 1, 2020 – December 31, 2026
+  </div>
+
+  <div
+    class="results-count"
+    id="results-count"
+  ></div>
+
+</section>
+
+  <section class="cards">
+
+    <div class="card">
+      <div class="card-label">Total Contributions</div>
+      <div class="card-value" id="total">$0</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Transactions</div>
+      <div class="card-value" id="count">0</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Average Contribution</div>
+      <div class="card-value" id="average">$0</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Largest Contribution</div>
+      <div class="card-value" id="largest">$0</div>
+    </div>
+
+  </section>
+
+  <section class="dashboard-grid">
+
+    <div class="panel dashboard-panel">
+      <div class="panel-header">
+        <h2>Contribution Breakdown</h2>
+      </div>
+
+      <div class="breakdown">
+
+        <div class="breakdown-item">
+          <div class="breakdown-label">
+            <span>Individuals</span>
+            <strong id="individual-total">$0</strong>
+          </div>
+
+          <div class="bar">
+            <div id="individual-bar" class="bar-fill"></div>
+          </div>
+
+          <div class="breakdown-meta" id="individual-percent">
+            0%
+          </div>
+        </div>
+
+        <div class="breakdown-item">
+          <div class="breakdown-label">
+            <span>PACs</span>
+            <strong id="pac-total">$0</strong>
+          </div>
+
+          <div class="bar">
+            <div id="pac-bar" class="bar-fill"></div>
+          </div>
+
+          <div class="breakdown-meta" id="pac-percent">
+            0%
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+    <div class="panel dashboard-panel">
+      <div class="panel-header">
+        <h2>Top Contributors</h2>
+      </div>
+
+      <div id="top-contributors" class="top-contributors"></div>
+<div class="section-title">Top PACs / Organizations</div>
+<div id="top-pacs" class="top-contributors"></div>
+    </div>
+
+
+    <div class="panel dashboard-panel timeline-panel">
+      <div class="panel-header">
+        <h2>Contribution Activity</h2>
+      </div>
+
+<div id="timeline" class="timeline"></div>
+
+<div style="padding: 0 20px 20px;">
+  <button
+    id="timeline-toggle"
+    class="close-button"
+    type="button"
+    hidden
+  >
+    Show more
+  </button>
+</div>
+    </div>
+
+  </section>
+
+  <section class="panel">
+
+    <div class="panel-header">
+      <h2>Contributions</h2>
+    </div>
+
+    <table>
+
+      <thead>
+<tr>
+  <th>Date</th>
+  <th>Donor</th>
+  <th>Type</th>
+  <th>Payment</th>
+  <th class="amount">Amount</th>
+</tr>
+      </thead>
+
+<tbody id="contributions"></tbody>
+</table>
+
+<div style="padding: 0 20px 20px;">
+  <button
+    id="contributions-toggle"
+    class="close-button"
+    type="button"
+    hidden
+  >
+    Show more
+  </button>
+</div>
+
+    </table>
+
+  </section>
+  <section
+    id="donor-profile"
+    class="panel donor-profile"
+    hidden
+  >
+    <div class="panel-header donor-profile-header">
+      <div>
+        <h2 id="donor-name">Profile</h2>
+        <div id="donor-summary"></div>
+      </div>
+
+      <button id="close-donor-profile" class="close-button">
+        Close
+      </button>
+    </div>
+
+    <div class="donor-details" id="donor-details"></div>
+
+    <div class="donor-history">
+     
+<div class="campaigns-supported">
+  <h3>Campaigns Supported</h3>
+  <div id="campaigns-supported"></div>
+</div>
+
+ <h3>Contribution History</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Payment</th>
+            <th class="amount">Amount</th>
+          </tr>
+        </thead>
+
+        <tbody id="donor-history"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+let allContributions = [];
+let dateRangeMin = null;
+let dateRangeMax = null;
+let dateRangeDays = [];
+let selectedCandidate = "";
+
+let contributionsVisible = 5;
+let timelineVisible = 5;
+
+const INITIAL_ROWS = 5;
+const LOAD_MORE_ROWS = 25;
+
+
+
+
+/* =========================================================
+   LOAD DATA
+   ========================================================= */
+
+async function loadData() {
+  try {
+    const response = await fetch("../data/contributions_all.json");
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to load contributions_all.json: ${response.status}`
+      );
+    }
+
+    const data = await response.json();
+
+    /*
+     * Support either:
+     *   [ ...records ]
+     *
+     * or:
+     *   { contributions: [ ...records ] }
+     */
+    if (Array.isArray(data)) {
+      allContributions = data;
+    } else if (Array.isArray(data.contributions)) {
+      allContributions = data.contributions;
+    } else {
+      throw new Error(
+        "The JSON file does not contain a contributions array."
+      );
+    }
+
+    /*
+     * Make sure every record has the fields the site expects.
+     */
+    allContributions = allContributions.map(c => ({
+      ...c,
+
+      campaign: c.campaign || c.candidate || "",
+      org_id: c.org_id || "",
+      candidate_id: c.candidate_id || "",
+      chamber: c.chamber || "",
+      district: c.district || "",
+      party: c.party || "",
+
+      contribution_id:
+        c.contribution_id ||
+        c.ContributionID ||
+        "",
+
+      type:
+        c.type ||
+        c.ContDesc ||
+        "",
+
+      incomplete:
+        Boolean(c.incomplete) ||
+        c.ViewIncomplete === "Incomplete" ||
+        Boolean(c.IncompleteDesc),
+
+      first_name:
+        c.first_name ||
+        c.FirstName ||
+        "",
+
+      last_name:
+        c.last_name ||
+        c.LastName ||
+        "",
+
+      full_name:
+        c.full_name ||
+        c.FullName ||
+        c.OrganizationName ||
+        c.organization ||
+        "",
+
+      organization:
+        c.organization ||
+        c.OrganizationName ||
+        "",
+
+      employer:
+        c.employer ||
+        c.EmployerName ||
+        "",
+
+      address:
+        c.address ||
+        c.Address ||
+        "",
+
+      city_state_zip:
+        c.city_state_zip ||
+        c.CityStZip ||
+        "",
+
+      payment_method:
+        c.payment_method ||
+        c.ReceiptDesc ||
+        "",
+
+      receipt_date:
+        normalizeDate(
+          c.receipt_date ||
+          c.ReceiptDate ||
+          ""
+        ),
+
+      deposit_date:
+        normalizeDate(
+          c.deposit_date ||
+          c.DepositDate ||
+          ""
+        ),
+
+      amount:
+        Number(c.amount) ||
+        Number(c.Amount) ||
+        0
+    }));
+
+    console.log(
+      "Loaded contributions:",
+      allContributions.length
+    );
+
+    console.log(
+      "First contribution:",
+      allContributions[0]
+    );
+
+    populateCandidateSelector();
+    initializeDateRange();
+    attachEventListeners();
+    updateView();
+
+  } catch (error) {
+    console.error("Error loading data:", error);
+  }
+}
+
+
+/* =========================================================
+   DATE HANDLING
+   ========================================================= */
+
+function normalizeDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  value = String(value).trim();
+
+  /*
+   * Already YYYY-MM-DD
+   */
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return value;
+  }
+
+  /*
+   * MM/DD/YYYY
+   */
+  const parts = value.split("/");
+
+  if (parts.length === 3) {
+    const month = parts[0].padStart(2, "0");
+    const day = parts[1].padStart(2, "0");
+    const year = parts[2];
+
+    return `${year}-${month}-${day}`;
+  }
+
+  return value;
+}
+
+
+function parseDate(value) {
+  if (!value) {
+    return null;
+  }
+
+  const date = new Date(value + "T00:00:00");
+
+  if (isNaN(date.getTime())) {
+    return null;
+  }
+
+  return date;
+}
+
+
+function displayDate(date) {
+  if (!date) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat(
+    "en-US",
+    {
+      month: "short",
+      day: "numeric",
+      year: "numeric"
+    }
+  ).format(date);
+}
+
+
+function formatDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  const date = parseDate(value);
+
+  if (!date) {
+    return value;
+  }
+
+  return new Intl.DateTimeFormat(
+    "en-US",
+    {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric"
+    }
+  ).format(date);
+}
+
+
+/* =========================================================
+   DATE RANGE
+   ========================================================= */
+
+function initializeDateRange() {
+  const dates = allContributions
+    .map(c => parseDate(c.receipt_date))
+    .filter(Boolean);
+
+  if (!dates.length) {
+    console.warn("No valid contribution dates found.");
+    return;
+  }
+
+  dates.sort((a, b) => a - b);
+
+  dateRangeMin = dates[0];
+  dateRangeMax = dates[dates.length - 1];
+
+  const days = [];
+
+  let current = new Date(dateRangeMin);
+
+  while (current <= dateRangeMax) {
+    days.push(new Date(current));
+    current.setDate(current.getDate() + 1);
+  }
+
+  dateRangeDays = days;
+
+  const startSlider =
+    document.getElementById("start-date");
+
+  const endSlider =
+    document.getElementById("end-date");
+
+  startSlider.min = 0;
+  endSlider.min = 0;
+
+  startSlider.max = days.length - 1;
+  endSlider.max = days.length - 1;
+
+  startSlider.value = 0;
+  endSlider.value = days.length - 1;
+
+  updateDateRangeUI();
+}
+
+
+function updateDateRangeUI() {
+  if (!dateRangeDays.length) {
+    return;
+  }
+
+  const startSlider =
+    document.getElementById("start-date");
+
+  const endSlider =
+    document.getElementById("end-date");
+
+  let startIndex =
+    Number(startSlider.value);
+
+  let endIndex =
+    Number(endSlider.value);
+
+  if (startIndex > endIndex) {
+    [startIndex, endIndex] =
+      [endIndex, startIndex];
+  }
+
+  const startDate =
+    dateRangeDays[startIndex];
+
+  const endDate =
+    dateRangeDays[endIndex];
+
+  document.getElementById(
+    "start-date-label"
+  ).textContent =
+    displayDate(startDate);
+
+  document.getElementById(
+    "end-date-label"
+  ).textContent =
+    displayDate(endDate);
+
+  document.getElementById(
+    "date-range-summary"
+  ).textContent =
+    `${displayDate(startDate)} – ${displayDate(endDate)}`;
+
+  const max =
+    dateRangeDays.length - 1;
+
+  if (max <= 0) {
+    return;
+  }
+
+  const startPercent =
+    (startIndex / max) * 100;
+
+  const endPercent =
+    (endIndex / max) * 100;
+
+  document.getElementById(
+    "date-range-fill"
+  ).style.left =
+    `${startPercent}%`;
+
+  document.getElementById(
+    "date-range-fill"
+  ).style.right =
+    `${100 - endPercent}%`;
+}
+
+
+/* =========================================================
+   CANDIDATE SELECTOR
+   ========================================================= */
+
+function populateCandidateSelector() {
+  const select =
+    document.getElementById("candidate-select");
+
+  if (!select) {
+    return;
+  }
+
+  const candidates = [
+    ...new Set(
+      allContributions
+        .map(c => c.campaign)
+        .filter(Boolean)
+    )
+  ].sort((a, b) =>
+    a.localeCompare(b)
+  );
+
+  select.innerHTML = "";
+
+  const defaultOption =
+    document.createElement("option");
+
+  defaultOption.value = "";
+  defaultOption.textContent =
+    "Select a candidate...";
+
+  select.appendChild(defaultOption);
+
+  candidates.forEach(candidate => {
+    const option =
+      document.createElement("option");
+
+    option.value = candidate;
+    option.textContent = candidate;
+
+    select.appendChild(option);
+  });
+
+  console.log(
+    "Candidate selector populated:",
+    candidates.length
+  );
+}
+
+
+/* =========================================================
+   MAIN VIEW
+   ========================================================= */
+
+function updateView() {
+  let filtered = [...allContributions];
+
+  /*
+   * Candidate filter
+   */
+  if (selectedCandidate) {
+    filtered =
+      filtered.filter(
+        c =>
+          c.campaign ===
+          selectedCandidate
+      );
+  }
+
+  /*
+   * Date filter
+   */
+  if (dateRangeDays.length) {
+    const startSlider =
+      document.getElementById("start-date");
+
+    const endSlider =
+      document.getElementById("end-date");
+
+    let startIndex =
+      Number(startSlider.value);
+
+    let endIndex =
+      Number(endSlider.value);
+
+    if (startIndex > endIndex) {
+      [startIndex, endIndex] =
+        [endIndex, startIndex];
+    }
+
+    const startDate =
+      dateRangeDays[startIndex];
+
+    const endDate =
+      dateRangeDays[endIndex];
+
+    filtered =
+      filtered.filter(c => {
+        const date =
+          parseDate(c.receipt_date);
+
+        if (!date) {
+          return false;
+        }
+
+        return (
+          date >= startDate &&
+          date <= endDate
+        );
+      });
+  }
+
+  updateDateRangeUI();
+
+  render(filtered);
+
+  if (
+    !document.getElementById("node-view").hidden
+  ) {
+    renderNodeNetwork(filtered);
+  }
+}
+
+/* =========================================================
+   RENDER MAIN DASHBOARD
+   ========================================================= */
+
+function render(contributions) {
+  const table =
+    document.getElementById("contributions");
+
+  table.innerHTML = "";
+
+  const total =
+    contributions.reduce(
+      (sum, c) =>
+        sum + Number(c.amount || 0),
+      0
+    );
+
+  const average =
+    contributions.length
+      ? total / contributions.length
+      : 0;
+
+  const largest =
+    contributions.length
+      ? Math.max(
+          ...contributions.map(
+            c => Number(c.amount || 0)
+          )
+        )
+      : 0;
+
+  document.getElementById("total")
+    .textContent =
+    money(total);
+
+  document.getElementById("count")
+    .textContent =
+    contributions.length;
+
+  document.getElementById("average")
+    .textContent =
+    money(average);
+
+  document.getElementById("largest")
+    .textContent =
+    money(largest);
+
+updateBreakdown(contributions);
+updateCandidateNetwork(contributions);
+updateTopContributors(contributions);
+updateTopPACs(contributions);
+updateTimeline(contributions);
+
+  document.getElementById(
+    "results-count"
+  ).textContent =
+    `Showing ${contributions.length} of ${allContributions.length} transactions`;
+
+  const toggle =
+    document.getElementById(
+      "contributions-toggle"
+    );
+
+  if (contributions.length === 0) {
+    table.innerHTML = `
+      <tr>
+        <td colspan="5" class="empty">
+          No contributions match your filters.
+        </td>
+      </tr>
+    `;
+
+    toggle.hidden = true;
+
+    return;
+  }
+
+  /*
+   * Make sure we don't try to show more
+   * rows than actually exist.
+   */
+  const visibleCount =
+    Math.min(
+      contributionsVisible,
+      contributions.length
+    );
+
+  const visibleContributions =
+    contributions.slice(
+      0,
+      visibleCount
+    );
+
+  visibleContributions.forEach(c => {
+    const row =
+      document.createElement("tr");
+
+    const name =
+      c.full_name ||
+      c.organization ||
+      "Unknown";
+
+    const incomplete =
+      c.incomplete
+        ? `
+          <span class="incomplete">
+            Incomplete
+          </span>
+        `
+        : "";
+
+    row.innerHTML = `
+      <td>
+        ${formatDate(c.receipt_date)}
+      </td>
+
+      <td>
+        <button
+          class="donor-link"
+          data-donor="${escapeHtml(name)}"
+          type="button"
+        >
+          ${escapeHtml(name)}
+        </button>
+
+        ${incomplete}
+      </td>
+
+      <td>
+        ${escapeHtml(c.type || "")}
+      </td>
+
+      <td>
+        ${escapeHtml(c.payment_method || "")}
+      </td>
+
+      <td class="amount">
+        ${money(c.amount)}
+      </td>
+    `;
+
+    table.appendChild(row);
+  });
+
+  /*
+   * Show-more button
+   */
+  if (
+    contributions.length >
+    INITIAL_ROWS
+  ) {
+    toggle.hidden = false;
+
+    if (
+      contributionsVisible >=
+      contributions.length
+    ) {
+      toggle.textContent =
+        "Show less";
+    } else {
+      const remaining =
+        contributions.length -
+        contributionsVisible;
+
+      toggle.textContent =
+        `Show more (${Math.min(
+          LOAD_MORE_ROWS,
+          remaining
+        )} more)`;
+    }
+  } else {
+    toggle.hidden = true;
+  }
+}
+
+
+/* =========================================================
+   CONTRIBUTION BREAKDOWN
+   ========================================================= */
+
+function updateBreakdown(contributions) {
+  const individualTotal =
+    contributions
+      .filter(c =>
+        String(c.type)
+          .toLowerCase()
+          .includes("individual")
+      )
+      .reduce(
+        (sum, c) =>
+          sum + Number(c.amount || 0),
+        0
+      );
+
+  const pacTotal =
+    contributions
+      .filter(c =>
+        String(c.type)
+          .toLowerCase()
+          .includes("pac")
+      )
+      .reduce(
+        (sum, c) =>
+          sum + Number(c.amount || 0),
+        0
+      );
+
+  const total =
+    individualTotal + pacTotal;
+
+  const individualPercent =
+    total
+      ? (individualTotal / total) * 100
+      : 0;
+
+  const pacPercent =
+    total
+      ? (pacTotal / total) * 100
+      : 0;
+
+  document.getElementById(
+    "individual-total"
+  ).textContent =
+    money(individualTotal);
+
+  document.getElementById(
+    "pac-total"
+  ).textContent =
+    money(pacTotal);
+
+  document.getElementById(
+    "individual-percent"
+  ).textContent =
+    `${individualPercent.toFixed(1)}%`;
+
+  document.getElementById(
+    "pac-percent"
+  ).textContent =
+    `${pacPercent.toFixed(1)}%`;
+
+  document.getElementById(
+    "individual-bar"
+  ).style.width =
+    `${individualPercent}%`;
+
+  document.getElementById(
+    "pac-bar"
+  ).style.width =
+    `${pacPercent}%`;
+}
+
+
+/* =========================================================
+   TOP CONTRIBUTORS
+   ========================================================= */
+
+function updateTopContributors(contributions) {
+  const totals = {};
+
+  contributions.forEach(c => {
+    const name =
+      c.full_name ||
+      c.organization ||
+      "Unknown";
+
+    totals[name] =
+      (totals[name] || 0) +
+      Number(c.amount || 0);
+  });
+
+  const ranked =
+    Object.entries(totals)
+      .sort(
+        (a, b) => b[1] - a[1]
+      )
+      .slice(0, 10);
+
+  const container =
+    document.getElementById(
+      "top-contributors"
+    );
+
+  container.innerHTML = "";
+
+  ranked.forEach(
+    ([name, amount], index) => {
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "top-contributor";
+
+      row.innerHTML = `
+        <button
+          class="donor-link top-contributor-name"
+          data-donor="${escapeHtml(name)}"
+          type="button"
+        >
+          ${index + 1}. ${escapeHtml(name)}
+        </button>
+
+        <span class="top-contributor-amount">
+          ${money(amount)}
+        </span>
+      `;
+
+      container.appendChild(row);
+    }
+  );
+}
+
+
+/* =========================================================
+   TOP PACS
+   ========================================================= */
+
+function updateTopPACs(contributions) {
+  const totals = {};
+
+  contributions
+    .filter(c =>
+      String(c.type)
+        .toLowerCase()
+        .includes("pac")
+    )
+    .forEach(c => {
+      const name =
+        c.full_name ||
+        c.organization ||
+        "Unknown";
+
+      totals[name] =
+        (totals[name] || 0) +
+        Number(c.amount || 0);
+    });
+
+  const ranked =
+    Object.entries(totals)
+      .sort(
+        (a, b) => b[1] - a[1]
+      )
+      .slice(0, 10);
+
+  const container =
+    document.getElementById(
+      "top-pacs"
+    );
+
+  container.innerHTML = "";
+
+  if (!ranked.length) {
+    container.innerHTML = `
+      <div class="empty">
+        No PAC contributions found.
+      </div>
+    `;
+
+    return;
+  }
+
+  ranked.forEach(
+    ([name, amount], index) => {
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "top-contributor";
+
+      row.innerHTML = `
+        <button
+          class="donor-link top-contributor-name"
+          data-donor="${escapeHtml(name)}"
+          type="button"
+        >
+          ${index + 1}. ${escapeHtml(name)}
+        </button>
+
+        <span class="top-contributor-amount">
+          ${money(amount)}
+        </span>
+      `;
+
+      container.appendChild(row);
+    }
+  );
+}
+
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+function updateTimeline(contributions) {
+  const totals = {};
+
+  contributions.forEach(c => {
+    if (!c.receipt_date) {
+      return;
+    }
+
+    totals[c.receipt_date] =
+      (totals[c.receipt_date] || 0) +
+      Number(c.amount || 0);
+  });
+
+  const dates =
+    Object.keys(totals)
+      .sort()
+      .reverse();
+
+  const max =
+    dates.length
+      ? Math.max(
+          ...dates.map(
+            date => totals[date]
+          )
+        )
+      : 0;
+
+  const container =
+    document.getElementById(
+      "timeline"
+    );
+
+  container.innerHTML = "";
+
+  const toggle =
+    document.getElementById(
+      "timeline-toggle"
+    );
+
+  if (!dates.length) {
+    toggle.hidden = true;
+    return;
+  }
+
+  const visibleDates =
+    dates.slice(
+      0,
+      timelineVisible
+    );
+
+  visibleDates.forEach(date => {
+    const amount =
+      totals[date];
+
+    const width =
+      max
+        ? (amount / max) * 100
+        : 0;
+
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "timeline-row";
+
+    row.innerHTML = `
+      <div class="timeline-date">
+        ${formatDate(date)}
+      </div>
+
+      <div class="timeline-bar">
+        <div
+          class="timeline-bar-fill"
+          style="width: ${width}%"
+        ></div>
+      </div>
+
+      <div class="timeline-amount">
+        ${money(amount)}
+      </div>
+    `;
+
+    container.appendChild(row);
+  });
+
+  if (dates.length > INITIAL_ROWS) {
+    toggle.hidden = false;
+
+    if (
+      timelineVisible >=
+      dates.length
+    ) {
+      toggle.textContent =
+        "Show less";
+    } else {
+      const remaining =
+        dates.length -
+        timelineVisible;
+
+      toggle.textContent =
+        `Show more (${Math.min(
+          LOAD_MORE_ROWS,
+          remaining
+        )} more)`;
+    }
+  } else {
+    toggle.hidden = true;
+  }
+}
+
+
+/* =========================================================
+   MONEY
+   ========================================================= */
+
+function money(value) {
+  return new Intl.NumberFormat(
+    "en-US",
+    {
+      style: "currency",
+      currency: "USD"
+    }
+  ).format(
+    Number(value || 0)
+  );
+}
+
+
+/* =========================================================
+   HTML ESCAPING
+   ========================================================= */
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+
+/* =========================================================
+   DONOR PROFILE
+   ========================================================= */
+
+function showDonorProfile(donorName) {
+  const donations =
+    allContributions.filter(c => {
+      const name =
+        c.full_name ||
+        c.organization ||
+        "Unknown";
+
+      return name === donorName;
+    });
+
+  if (!donations.length) {
+    console.warn(
+      "No donations found for donor:",
+      donorName
+    );
+
+    return;
+  }
+
+  const total =
+    donations.reduce(
+      (sum, c) =>
+        sum + Number(c.amount || 0),
+      0
+    );
+
+  const count =
+    donations.length;
+
+  const average =
+    count
+      ? total / count
+      : 0;
+
+  const largest =
+    count
+      ? Math.max(
+          ...donations.map(
+            c => Number(c.amount || 0)
+          )
+        )
+      : 0;
+
+  const sortedDonations =
+    donations
+      .slice()
+      .sort((a, b) =>
+        a.receipt_date.localeCompare(
+          b.receipt_date
+        )
+      );
+
+  const firstContribution =
+    sortedDonations[0];
+
+  const latestContribution =
+    sortedDonations[
+      sortedDonations.length - 1
+    ];
+
+  const isPAC =
+    donations.some(c =>
+      String(c.type)
+        .toLowerCase()
+        .includes("pac")
+    );
+
+  const profileType =
+    isPAC
+      ? "PAC / Organization"
+      : "Individual Donor";
+
+  document.getElementById(
+    "donor-name"
+  ).textContent =
+    donorName;
+
+  document.getElementById(
+    "donor-summary"
+  ).textContent =
+    `${profileType} · ${count} contribution${count === 1 ? "" : "s"} · ${money(total)} total`;
+
+
+  /* -----------------------------------------
+     Donor details
+     ----------------------------------------- */
+
+  const first =
+    donations[0];
+
+  document.getElementById(
+    "donor-details"
+  ).innerHTML = `
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Profile type
+      </div>
+      <div class="donor-detail-value">
+        ${escapeHtml(profileType)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Total contributed
+      </div>
+      <div class="donor-detail-value">
+        ${money(total)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Contributions
+      </div>
+      <div class="donor-detail-value">
+        ${count}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Average contribution
+      </div>
+      <div class="donor-detail-value">
+        ${money(average)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Largest contribution
+      </div>
+      <div class="donor-detail-value">
+        ${money(largest)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        First contribution
+      </div>
+      <div class="donor-detail-value">
+        ${formatDate(firstContribution.receipt_date)}
+        · ${money(firstContribution.amount)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Latest contribution
+      </div>
+      <div class="donor-detail-value">
+        ${formatDate(latestContribution.receipt_date)}
+        · ${money(latestContribution.amount)}
+      </div>
+    </div>
+
+    <div class="donor-detail">
+      <div class="donor-detail-label">
+        Address
+      </div>
+      <div class="donor-detail-value">
+        ${escapeHtml(
+          firstContribution.address ||
+          firstContribution.city_state_zip ||
+          "Not listed"
+        )}
+      </div>
+    </div>
+  `;
+
+
+  /* -----------------------------------------
+     Campaigns supported
+     ----------------------------------------- */
+
+  const campaignTotals = {};
+
+  donations.forEach(c => {
+    const campaign =
+      c.campaign ||
+      "Unknown";
+
+    if (!campaignTotals[campaign]) {
+      campaignTotals[campaign] = {
+        count: 0,
+        total: 0
+      };
+    }
+
+    campaignTotals[campaign].count += 1;
+
+    campaignTotals[campaign].total +=
+      Number(c.amount || 0);
+  });
+
+  const campaigns =
+    Object.entries(campaignTotals)
+      .sort(
+        (a, b) =>
+          b[1].total - a[1].total
+      );
+
+  const campaignsContainer =
+    document.getElementById(
+      "campaigns-supported"
+    );
+
+  campaignsContainer.innerHTML = "";
+
+  campaigns.forEach(
+    ([campaign, stats]) => {
+      const row =
+        document.createElement("div");
+
+      row.className =
+        "campaign-supported-row";
+
+      row.innerHTML = `
+        <div>
+          <button
+            type="button"
+            class="campaign-link"
+            data-campaign="${escapeHtml(campaign)}"
+          >
+            ${escapeHtml(campaign)}
+          </button>
+
+          <div>
+            ${stats.count}
+            contribution${stats.count === 1 ? "" : "s"}
+          </div>
+        </div>
+
+        <div class="amount">
+          ${money(stats.total)}
+        </div>
+      `;
+
+      campaignsContainer.appendChild(row);
+    }
+  );
+
+
+  /* -----------------------------------------
+     Contribution history
+     ----------------------------------------- */
+
+  const historyTable =
+    document.getElementById(
+      "donor-history"
+    );
+
+  historyTable.innerHTML = "";
+
+  donations
+    .slice()
+    .sort((a, b) =>
+      b.receipt_date.localeCompare(
+        a.receipt_date
+      )
+    )
+    .forEach(c => {
+      const row =
+        document.createElement("tr");
+
+      row.innerHTML = `
+        <td>
+          ${formatDate(c.receipt_date)}
+        </td>
+
+        <td>
+          ${escapeHtml(
+            c.campaign || "Unknown"
+          )}
+        </td>
+
+        <td>
+          ${escapeHtml(
+            c.payment_method || ""
+          )}
+        </td>
+
+        <td class="amount">
+          ${money(c.amount)}
+        </td>
+      `;
+
+      historyTable.appendChild(row);
+    });
+
+
+  /* -----------------------------------------
+     Show profile
+     ----------------------------------------- */
+
+const profile =
+  document.getElementById(
+    "donor-profile"
+  );
+
+profile.hidden = false;
+
+profile.scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
+}
+
+/* =========================================================
+   CANDIDATE FUNDING NETWORK
+   ========================================================= */
+
+function updateCandidateNetwork(contributions) {
+  const container =
+    document.getElementById(
+      "candidate-network"
+    );
+
+  if (!container) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  /*
+   * Combine contributions by donor.
+   */
+
+  const donorTotals = {};
+
+  contributions.forEach(c => {
+    const donor =
+      c.full_name ||
+      c.organization ||
+      "Unknown";
+
+    donorTotals[donor] =
+      (donorTotals[donor] || 0) +
+      Number(c.amount || 0);
+  });
+
+  /*
+   * Get the ten largest donors.
+   */
+
+  const donors =
+    Object.entries(donorTotals)
+      .sort(
+        (a, b) =>
+          b[1] - a[1]
+      )
+      .slice(0, 10);
+
+  if (!donors.length) {
+    container.innerHTML = `
+      <div class="empty">
+        No donor information available.
+      </div>
+    `;
+
+    return;
+  }
+
+  /*
+   * Candidate node.
+   */
+
+  const candidateNode =
+    document.createElement("div");
+
+  candidateNode.className =
+    "network-node network-candidate";
+
+  candidateNode.textContent =
+    contributions[0].campaign ||
+    "Candidate";
+
+  container.appendChild(
+    candidateNode
+  );
+
+  /*
+   * Center of the network.
+   */
+
+  const centerX = 50;
+  const centerY = 50;
+
+  /*
+   * Arrange donors around the candidate.
+   */
+
+  donors.forEach(
+    ([name, amount], index) => {
+
+      const angle =
+        (index / donors.length) *
+        Math.PI * 2 -
+        Math.PI / 2;
+
+      const radius =
+        window.innerWidth <= 700
+          ? 38
+          : 37;
+
+      const x =
+        centerX +
+        Math.cos(angle) *
+        radius;
+
+      const y =
+        centerY +
+        Math.sin(angle) *
+        radius;
+
+      /*
+       * Donor node
+       */
+
+      const donorNode =
+        document.createElement("div");
+
+      donorNode.className =
+        "network-node network-donor";
+
+      donorNode.style.left =
+        `${x}%`;
+
+      donorNode.style.top =
+        `${y}%`;
+
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+
+      button.className =
+        "network-node-button";
+
+      button.dataset.donor =
+        name;
+
+      button.textContent =
+        name;
+
+      donorNode.appendChild(
+        button
+      );
+
+      container.appendChild(
+        donorNode
+      );
+
+      /*
+       * Connection line
+       */
+
+      const line =
+        document.createElement("div");
+
+      line.className =
+        "network-line";
+
+      /*
+       * Convert percentage coordinates
+       * into a line from the center
+       * toward the donor.
+       */
+
+      const dx =
+        x - centerX;
+
+      const dy =
+        y - centerY;
+
+      const length =
+        Math.sqrt(
+          dx * dx +
+          dy * dy
+        );
+
+      const angleDegrees =
+        Math.atan2(
+          dy,
+          dx
+        ) *
+        (180 / Math.PI);
+
+      line.style.left =
+        `${centerX}%`;
+
+      line.style.top =
+        `${centerY}%`;
+
+      line.style.width =
+        `${length}%`;
+
+      line.style.transform =
+        `rotate(${angleDegrees}deg)`;
+
+      container.insertBefore(
+        line,
+        donorNode
+      );
+
+      /*
+       * Amount label
+       */
+
+      const amountLabel =
+        document.createElement("div");
+
+      amountLabel.className =
+        "network-donor-amount";
+
+      amountLabel.style.left =
+        `${centerX + dx * 0.55}%`;
+
+      amountLabel.style.top =
+        `${centerY + dy * 0.55}%`;
+
+      amountLabel.textContent =
+        money(amount);
+
+      container.appendChild(
+        amountLabel
+      );
+    }
+  );
+}
+/* =========================================================
+   EVENT LISTENERS
+   ========================================================= */
+
+function attachEventListeners() {
+
+const nodeView =
+  document.getElementById("node-view");
+
+const main =
+  document.querySelector("main");
+
+const mainChildren =
+  [...main.children].filter(
+    child => child !== nodeView
+  );
+
+document
+  .getElementById("node-view-button")
+  .addEventListener("click", () => {
+
+    document
+      .getElementById("node-view")
+      .hidden = false;
+
+    document
+      .querySelector(".cards")
+      .hidden = true;
+
+    document
+      .querySelector(".dashboard-grid")
+      .hidden = true;
+
+    document
+      .querySelector("main > .panel:not(#donor-profile)")
+      .hidden = true;
+
+    document
+      .getElementById("donor-profile")
+      .hidden = true;
+
+    updateView();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+document
+  .getElementById("exit-node-view")
+  .addEventListener("click", () => {
+
+    document
+      .getElementById("node-view")
+      .hidden = true;
+
+    document
+      .querySelector(".cards")
+      .hidden = false;
+
+    document
+      .querySelector(".dashboard-grid")
+      .hidden = false;
+
+    document
+      .querySelector("main > .panel:not(#donor-profile)")
+      .hidden = false;
+
+    updateView();
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+ /* -----------------------------------------
+     Candidate selector
+     ----------------------------------------- */
+
+  document
+    .getElementById("candidate-select")
+    .addEventListener(
+      "change",
+      event => {
+        selectedCandidate =
+          event.target.value;
+
+        contributionsVisible =
+          INITIAL_ROWS;
+
+        timelineVisible =
+          INITIAL_ROWS;
+
+        const title =
+          document.getElementById(
+            "site-title"
+          );
+
+        const subtitle =
+          document.getElementById(
+            "site-subtitle"
+          );
+
+        if (!selectedCandidate) {
+          title.textContent =
+            "Campaign Finance";
+
+          subtitle.textContent =
+            "Select a candidate to view campaign finance activity.";
+
+          updateView();
+
+          return;
+        }
+
+        title.textContent =
+          selectedCandidate;
+
+        const candidateRows =
+          allContributions.filter(
+            c =>
+              c.campaign ===
+              selectedCandidate
+          );
+
+        const candidate =
+          candidateRows[0];
+
+        if (candidate) {
+          const parts = [];
+
+          if (candidate.party) {
+            parts.push(
+              candidate.party
+            );
+          }
+
+          if (candidate.chamber) {
+            parts.push(
+              candidate.chamber
+            );
+          }
+
+          if (candidate.district) {
+            parts.push(
+              `District ${candidate.district}`
+            );
+          }
+
+          subtitle.textContent =
+            parts.join(" · ");
+        }
+
+        updateView();
+      }
+    );
+
+
+  /* -----------------------------------------
+     Date sliders
+     ----------------------------------------- */
+
+  document
+    .getElementById("start-date")
+    .addEventListener(
+      "input",
+      () => {
+        updateDateRangeUI();
+        updateView();
+      }
+    );
+
+  document
+    .getElementById("end-date")
+    .addEventListener(
+      "input",
+      () => {
+        updateDateRangeUI();
+        updateView();
+      }
+    );
+
+
+  /* -----------------------------------------
+     Contributions Show More
+     ----------------------------------------- */
+
+  document
+    .getElementById("contributions-toggle")
+    .addEventListener(
+      "click",
+      () => {
+        const total =
+          allContributions.filter(
+            c =>
+              selectedCandidate
+                ? c.campaign ===
+                  selectedCandidate
+                : true
+          ).length;
+
+        if (
+          contributionsVisible >=
+          total
+        ) {
+          contributionsVisible =
+            INITIAL_ROWS;
+        } else {
+          contributionsVisible =
+            Math.min(
+              contributionsVisible +
+                LOAD_MORE_ROWS,
+              total
+            );
+        }
+
+        updateView();
+      }
+    );
+
+
+  /* -----------------------------------------
+     Timeline Show More
+     ----------------------------------------- */
+
+  document
+    .getElementById("timeline-toggle")
+    .addEventListener(
+      "click",
+      () => {
+        const contributions =
+          selectedCandidate
+            ? allContributions.filter(
+                c =>
+                  c.campaign ===
+                  selectedCandidate
+              )
+            : allContributions;
+
+        const dates = [
+          ...new Set(
+            contributions
+              .map(
+                c =>
+                  c.receipt_date
+              )
+              .filter(Boolean)
+          )
+        ];
+
+        if (
+          timelineVisible >=
+          dates.length
+        ) {
+          timelineVisible =
+            INITIAL_ROWS;
+        } else {
+          timelineVisible =
+            Math.min(
+              timelineVisible +
+                LOAD_MORE_ROWS,
+              dates.length
+            );
+        }
+
+        updateView();
+      }
+    );
+
+
+  /* -----------------------------------------
+     Donor links
+     ----------------------------------------- */
+
+  document.addEventListener(
+    "click",
+    event => {
+      const button =
+        event.target.closest(
+          ".donor-link"
+        );
+
+      if (!button) {
+        return;
+      }
+
+      const donorName =
+        button.dataset.donor;
+
+      console.log(
+        "DONOR CLICKED:",
+        donorName
+      );
+
+      if (!donorName) {
+        console.error(
+          "No donor name found on button."
+        );
+
+        return;
+      }
+
+      showDonorProfile(
+        donorName
+      );
+    }
+  );
+
+  /* -----------------------------------------
+     Campaign links
+     ----------------------------------------- */
+
+document.addEventListener(
+  "click",
+  event => {
+
+    const button =
+      event.target.closest(".campaign-link");
+
+    if (!button) {
+      return;
+    }
+
+    const campaign =
+      button.dataset.campaign;
+
+    if (!campaign) {
+      return;
+    }
+
+    console.log(
+      "CAMPAIGN CLICKED:",
+      campaign
+    );
+
+    const select =
+      document.getElementById(
+        "candidate-select"
+      );
+
+    if (!select) {
+      console.error(
+        "Candidate selector not found."
+      );
+      return;
+    }
+
+    /*
+     * Select the candidate in the
+     * main dashboard.
+     */
+    select.value = campaign;
+
+    select.dispatchEvent(
+      new Event("change")
+    );
+
+    /*
+     * Close donor profile if one is open.
+     */
+    document.getElementById(
+      "donor-profile"
+    ).hidden = true;
+
+    /*
+     * Return to the main dashboard.
+     */
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+);
+
+  /* -----------------------------------------
+     Close donor profile
+     ----------------------------------------- */
+
+  document
+    .getElementById(
+      "close-donor-profile"
+    )
+    .addEventListener(
+      "click",
+      () => {
+        document.getElementById(
+          "donor-profile"
+        ).hidden = true;
+      }
+    );
+
+}  // closes attachEventListeners()
+
+let currentNodeContributions = [];
+
+function renderNodeNetwork(contributions) {
+  currentNodeContributions = contributions;
+
+  const svg =
+    document.getElementById("network-svg");
+
+if (
+  !svg ||
+  !Array.isArray(contributions)
+) {
+  return;
+}
+
+  svg.innerHTML = "";
+
+  const width =
+    svg.clientWidth;
+
+  const height =
+    svg.clientHeight;
+
+  if (!width || !height) {
+    return;
+  }
+
+  const NS =
+    "http://www.w3.org/2000/svg";
+
+  const root =
+    document.createElementNS(
+      NS,
+      "g"
+    );
+
+  svg.appendChild(root);
+
+
+  /* ==================================================
+     CANDIDATES
+     ================================================== */
+
+  const candidateTotals = {};
+
+  contributions.forEach(c => {
+
+    const candidate =
+      c.campaign ||
+      c.candidate;
+
+    if (!candidate) {
+      return;
+    }
+
+    candidateTotals[candidate] =
+      (candidateTotals[candidate] || 0) +
+      Number(c.amount || 0);
+  });
+
+
+  const candidates =
+    Object.entries(candidateTotals)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8);
+
+
+  const centerX =
+    width / 2;
+
+  const centerY =
+    height / 2;
+
+  const candidateRadius =
+    Math.min(width, height) * 0.31;
+
+  const candidateNodes = [];
+
+
+  candidates.forEach(
+    ([name, amount], index) => {
+
+      const angle =
+        (index / candidates.length) *
+        Math.PI * 2 -
+        Math.PI / 2;
+
+      candidateNodes.push({
+
+        id:
+          `candidate-${index}`,
+
+        name,
+
+        type:
+          "candidate",
+
+        amount,
+
+        x:
+          centerX +
+          Math.cos(angle) *
+            candidateRadius,
+
+        y:
+          centerY +
+          Math.sin(angle) *
+            candidateRadius
+      });
+    }
+  );
+
+
+  /* ==================================================
+     DONORS / PACS
+     ================================================== */
+
+  const entityTotals = {};
+
+  contributions.forEach(c => {
+
+    const candidate =
+      c.campaign ||
+      c.candidate;
+
+    const donor =
+      c.full_name ||
+      c.organization;
+
+    if (
+      !candidate ||
+      !donor
+    ) {
+      return;
+    }
+
+    const amount =
+      Number(c.amount || 0);
+
+    if (!amount) {
+      return;
+    }
+
+    const key =
+      `${candidate}|||${donor}`;
+
+
+    if (!entityTotals[key]) {
+
+      entityTotals[key] = {
+
+        candidate,
+
+        donor,
+
+        amount: 0,
+
+        type:
+          String(c.type || "")
+            .toLowerCase()
+            .includes("pac")
+            ? "pac"
+            : "individual"
+      };
+    }
+
+    entityTotals[key].amount +=
+      amount;
+  });
+
+
+  const relationshipEdges =
+    Object.values(entityTotals)
+      .sort(
+        (a, b) =>
+          b.amount - a.amount
+      )
+      .slice(0, 30);
+
+
+  const entityMap = {};
+
+
+  relationshipEdges.forEach(edge => {
+
+    if (
+      entityMap[edge.donor]
+    ) {
+      return;
+    }
+
+    entityMap[edge.donor] = {
+
+      id:
+        `entity-${Object.keys(entityMap).length}`,
+
+      name:
+        edge.donor,
+
+      type:
+        edge.type,
+
+      amount:
+        0,
+
+      x:
+        centerX,
+
+      y:
+        centerY
+    };
+  });
+
+
+  relationshipEdges.forEach(edge => {
+
+    entityMap[edge.donor].amount +=
+      edge.amount;
+  });
+
+
+  const entities =
+    Object.values(entityMap);
+
+  const entityRadius =
+    Math.min(width, height) * 0.40;
+
+
+  entities.forEach(
+    (node, index) => {
+
+      const angle =
+        (index /
+          Math.max(
+            entities.length,
+            1
+          )) *
+        Math.PI * 2;
+
+      node.x =
+        centerX +
+        Math.cos(angle) *
+          entityRadius;
+
+      node.y =
+        centerY +
+        Math.sin(angle) *
+          entityRadius;
+    }
+  );
+
+
+  /* ==================================================
+     EDGES
+     ================================================== */
+
+  relationshipEdges.forEach(
+    edge => {
+
+      const candidate =
+        candidateNodes.find(
+          n =>
+            n.name ===
+            edge.candidate
+        );
+
+      const donor =
+        entityMap[
+          edge.donor
+        ];
+
+      if (
+        !candidate ||
+        !donor
+      ) {
+        return;
+      }
+
+
+      const line =
+        document.createElementNS(
+          NS,
+          "line"
+        );
+
+      line.classList.add(
+        "network-edge"
+      );
+
+      line.dataset.candidate =
+        candidate.name;
+
+      line.dataset.donor =
+        donor.name;
+
+      line.setAttribute(
+        "x1",
+        candidate.x
+      );
+
+      line.setAttribute(
+        "y1",
+        candidate.y
+      );
+
+      line.setAttribute(
+        "x2",
+        donor.x
+      );
+
+      line.setAttribute(
+        "y2",
+        donor.y
+      );
+
+      line.style.strokeWidth =
+        Math.max(
+          1,
+          Math.min(
+            7,
+            1 +
+              Math.sqrt(
+                edge.amount
+              ) / 100
+          )
+        );
+
+      root.appendChild(
+        line
+      );
+    }
+  );
+
+
+  /* ==================================================
+     NODES
+     ================================================== */
+
+  const nodes = [
+    ...candidateNodes,
+    ...entities
+  ];
+
+
+  nodes.forEach(node => {
+
+    const group =
+      document.createElementNS(
+        NS,
+        "g"
+      );
+
+    group.classList.add(
+      "network-node-group"
+    );
+
+    group.dataset.name =
+      node.name;
+
+    group.dataset.type =
+      node.type;
+
+    group.setAttribute(
+      "transform",
+      `translate(${node.x}, ${node.y})`
+    );
+
+    group.style.cursor =
+      "grab";
+
+
+    const circle =
+      document.createElementNS(
+        NS,
+        "circle"
+      );
+
+    circle.classList.add(
+      "network-node-circle"
+    );
+
+
+    const radius =
+      node.type === "candidate"
+        ? 24
+        : node.type === "pac"
+          ? 20
+          : 14;
+
+
+    circle.setAttribute(
+      "r",
+      radius
+    );
+
+    group.appendChild(
+      circle
+    );
+
+
+    const label =
+      document.createElementNS(
+        NS,
+        "text"
+      );
+
+    label.classList.add(
+      "network-node-label"
+    );
+
+    label.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+    label.setAttribute(
+      "y",
+      radius + 18
+    );
+
+    label.textContent =
+      node.name;
+
+    group.appendChild(
+      label
+    );
+
+
+    const amount =
+      document.createElementNS(
+        NS,
+        "text"
+      );
+
+    amount.classList.add(
+      "network-node-amount"
+    );
+
+    amount.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+    amount.setAttribute(
+      "y",
+      radius + 32
+    );
+
+    amount.textContent =
+      money(node.amount);
+
+    group.appendChild(
+      amount
+    );
+
+
+    root.appendChild(
+      group
+    );
+  });
+
+
+  /* ==================================================
+     HOVER
+     ================================================== */
+
+  root
+    .querySelectorAll(
+      ".network-node-group"
+    )
+    .forEach(group => {
+
+      group.addEventListener(
+        "mouseenter",
+        () => {
+
+          const name =
+            group.dataset.name;
+
+          root
+            .querySelectorAll(
+              ".network-edge"
+            )
+            .forEach(edge => {
+
+              const connected =
+                edge.dataset.candidate === name ||
+                edge.dataset.donor === name;
+
+              edge.classList.toggle(
+                "active",
+                connected
+              );
+            });
+
+
+          root
+            .querySelectorAll(
+              ".network-node-group"
+            )
+            .forEach(node => {
+
+              node.classList.toggle(
+                "dimmed",
+                node !== group
+              );
+            });
+        }
+      );
+
+
+      group.addEventListener(
+        "mouseleave",
+        () => {
+
+          root
+            .querySelectorAll(
+              ".network-edge"
+            )
+            .forEach(edge => {
+
+              edge.classList.remove(
+                "active"
+              );
+            });
+
+
+          root
+            .querySelectorAll(
+              ".network-node-group"
+            )
+            .forEach(node => {
+
+              node.classList.remove(
+                "dimmed"
+              );
+            });
+        }
+      );
+    });
+
+/* ==================================================
+   CLICK TO FOCUS
+   ================================================== */
+
+root
+  .querySelectorAll(
+    ".network-node-group"
+  )
+  .forEach(group => {
+
+    group.addEventListener(
+      "click",
+      event => {
+
+        /*
+         * Ignore a click that was really
+         * part of a drag.
+         */
+
+        if (group.dataset.dragged === "true") {
+          group.dataset.dragged = "false";
+          return;
+        }
+
+        const name =
+          group.dataset.name;
+
+        const type =
+          group.dataset.type;
+
+        console.log(
+          "NODE CLICKED:",
+          type,
+          name
+        );
+
+        /*
+         * Store the selected entity.
+         *
+         * We'll use this in the next step
+         * to rebuild the network around it.
+         */
+
+        window.selectedNetworkEntity = {
+          name,
+          type
+        };
+
+renderFocusedNetwork(
+  name,
+  type,
+  currentNodeContributions
+);
+        /*
+         * Visual feedback for now.
+         */
+
+        root
+          .querySelectorAll(
+            ".network-node-group"
+          )
+          .forEach(node => {
+
+            node.classList.toggle(
+              "selected",
+              node === group
+            );
+          });
+      }
+    );
+  });
+  /* ==================================================
+     DRAGGING
+     ================================================== */
+
+let draggedNode = null;
+let dragStartX = 0;
+let dragStartY = 0;
+let didDrag = false;
+
+  root
+    .querySelectorAll(
+      ".network-node-group"
+    )
+    .forEach(group => {
+
+group.addEventListener(
+  "mousedown",
+  event => {
+
+    event.preventDefault();
+
+    draggedNode =
+      group;
+
+    didDrag = false;
+
+    dragStartX =
+      event.clientX;
+
+    dragStartY =
+      event.clientY;
+
+    group.dataset.dragged =
+      "false";
+
+    group.style.cursor =
+      "grabbing";
+  }
+);
+    });
+
+
+  const moveNode =
+    event => {
+
+      if (!draggedNode) {
+        return;
+      }
+if (
+  Math.abs(event.clientX - dragStartX) > 4 ||
+  Math.abs(event.clientY - dragStartY) > 4
+) {
+  didDrag = true;
+  draggedNode.dataset.dragged = "true";
+}
+      const rect =
+        svg.getBoundingClientRect();
+
+      const x =
+        event.clientX -
+        rect.left;
+
+      const y =
+        event.clientY -
+        rect.top;
+
+
+      draggedNode.setAttribute(
+        "transform",
+        `translate(${x}, ${y})`
+      );
+
+
+      const name =
+        draggedNode.dataset.name;
+
+
+      root
+        .querySelectorAll(
+          ".network-edge"
+        )
+        .forEach(edge => {
+
+          if (
+            edge.dataset.candidate ===
+            name
+          ) {
+
+            edge.setAttribute(
+              "x1",
+              x
+            );
+
+            edge.setAttribute(
+              "y1",
+              y
+            );
+          }
+
+
+          if (
+            edge.dataset.donor ===
+            name
+          ) {
+
+            edge.setAttribute(
+              "x2",
+              x
+            );
+
+            edge.setAttribute(
+              "y2",
+              y
+            );
+          }
+        });
+    };
+
+
+  const releaseNode =
+    () => {
+
+      if (!draggedNode) {
+        return;
+      }
+
+      draggedNode.style.cursor =
+        "grab";
+
+      draggedNode =
+        null;
+    };
+
+
+  svg.addEventListener(
+    "mousemove",
+    moveNode
+  );
+
+  svg.addEventListener(
+    "mouseup",
+    releaseNode
+  );
+
+  svg.addEventListener(
+    "mouseleave",
+    releaseNode
+  );
+}
+function renderFocusedNetwork(entityName, entityType, contributions) {
+
+  const svg =
+    document.getElementById("network-svg");
+
+  if (
+    !svg ||
+    !Array.isArray(contributions)
+  ) {
+    return;
+  }
+
+  svg.innerHTML = "";
+
+  const width =
+    svg.clientWidth;
+
+  const height =
+    svg.clientHeight;
+
+  if (!width || !height) {
+    return;
+  }
+
+  const NS =
+    "http://www.w3.org/2000/svg";
+
+  const root =
+    document.createElementNS(
+      NS,
+      "g"
+    );
+
+  svg.appendChild(root);
+
+
+  /* ==================================================
+     FIND CONNECTIONS
+     ================================================== */
+
+  const connections = [];
+
+
+  contributions.forEach(c => {
+
+    const candidate =
+      c.campaign ||
+      c.candidate;
+
+    const donor =
+      c.full_name ||
+      c.organization;
+
+    if (
+      !candidate ||
+      !donor
+    ) {
+      return;
+    }
+
+    const amount =
+      Number(c.amount || 0);
+
+    if (!amount) {
+      return;
+    }
+
+
+    /*
+     * Determine whether this contribution
+     * touches the selected entity.
+     */
+
+    let connected = false;
+
+
+    if (
+      entityType === "candidate" &&
+      candidate === entityName
+    ) {
+      connected = true;
+    }
+
+
+    if (
+      entityType !== "candidate" &&
+      donor === entityName
+    ) {
+      connected = true;
+    }
+
+
+    if (!connected) {
+      return;
+    }
+
+
+    connections.push({
+
+      candidate,
+
+      donor,
+
+      amount,
+
+      type:
+        String(c.type || "")
+          .toLowerCase()
+          .includes("pac")
+          ? "pac"
+          : "individual"
+    });
+  });
+
+
+  /*
+   * Nothing found.
+   */
+
+  if (!connections.length) {
+
+    const message =
+      document.createElementNS(
+        NS,
+        "text"
+      );
+
+    message.setAttribute(
+      "x",
+      width / 2
+    );
+
+    message.setAttribute(
+      "y",
+      height / 2
+    );
+
+    message.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+    message.textContent =
+      "No connected contributions found.";
+
+    root.appendChild(
+      message
+    );
+
+    return;
+  }
+
+
+  /* ==================================================
+     AGGREGATE ENTITIES
+     ================================================== */
+
+  const totals = {};
+
+
+  connections.forEach(c => {
+
+    const name =
+      entityType === "candidate"
+        ? c.donor
+        : c.candidate;
+
+    const type =
+      entityType === "candidate"
+        ? c.type
+        : "candidate";
+
+
+    if (!totals[name]) {
+
+      totals[name] = {
+
+        name,
+
+        type,
+
+        amount: 0
+      };
+    }
+
+
+    totals[name].amount +=
+      c.amount;
+  });
+
+
+  /*
+   * Limit the view so a very active
+   * donor doesn't create a hairball.
+   */
+
+  const related =
+    Object.values(totals)
+      .sort(
+        (a, b) =>
+          b.amount - a.amount
+      )
+      .slice(0, 20);
+
+
+  /* ==================================================
+     CENTER NODE
+     ================================================== */
+
+  const centerX =
+    width / 2;
+
+  const centerY =
+    height / 2;
+
+
+  const center =
+    {
+
+      name:
+        entityName,
+
+      type:
+        entityType,
+
+      amount:
+        connections.reduce(
+          (sum, c) =>
+            sum + c.amount,
+          0
+        ),
+
+      x:
+        centerX,
+
+      y:
+        centerY
+    };
+
+
+  /* ==================================================
+     POSITION RELATED NODES
+     ================================================== */
+
+  const radius =
+    Math.min(width, height) * 0.38;
+
+
+  related.forEach(
+    (node, index) => {
+
+      const angle =
+        (index / related.length) *
+        Math.PI * 2 -
+        Math.PI / 2;
+
+
+      node.x =
+        centerX +
+        Math.cos(angle) *
+          radius;
+
+
+      node.y =
+        centerY +
+        Math.sin(angle) *
+          radius;
+    }
+  );
+
+
+  /* ==================================================
+     DRAW EDGES
+     ================================================== */
+
+  related.forEach(node => {
+
+    const line =
+      document.createElementNS(
+        NS,
+        "line"
+      );
+
+    line.classList.add(
+      "network-edge"
+    );
+
+    line.setAttribute(
+      "x1",
+      center.x
+    );
+
+    line.setAttribute(
+      "y1",
+      center.y
+    );
+
+    line.setAttribute(
+      "x2",
+      node.x
+    );
+
+    line.setAttribute(
+      "y2",
+      node.y
+    );
+
+    line.style.strokeWidth =
+      Math.max(
+        1,
+        Math.min(
+          8,
+          1 +
+            Math.sqrt(
+              node.amount
+            ) / 80
+        )
+      );
+
+
+    line.dataset.candidate =
+      entityType === "candidate"
+        ? entityName
+        : node.name;
+
+    line.dataset.donor =
+      entityType === "candidate"
+        ? node.name
+        : entityName;
+
+
+    root.appendChild(
+      line
+    );
+  });
+
+
+  /* ==================================================
+     DRAW CENTER + RELATED NODES
+     ================================================== */
+
+  const nodes = [
+    center,
+    ...related
+  ];
+
+
+  nodes.forEach(node => {
+
+    const group =
+      document.createElementNS(
+        NS,
+        "g"
+      );
+
+    group.classList.add(
+      "network-node-group"
+    );
+
+    group.dataset.name =
+      node.name;
+
+    group.dataset.type =
+      node.type;
+
+
+    group.setAttribute(
+      "transform",
+      `translate(${node.x}, ${node.y})`
+    );
+
+
+    const circle =
+      document.createElementNS(
+        NS,
+        "circle"
+      );
+
+    circle.classList.add(
+      "network-node-circle"
+    );
+
+
+    const circleRadius =
+      node === center
+        ? 30
+        : node.type === "candidate"
+          ? 22
+          : node.type === "pac"
+            ? 20
+            : 15;
+
+
+    circle.setAttribute(
+      "r",
+      circleRadius
+    );
+
+
+    group.appendChild(
+      circle
+    );
+
+
+    const label =
+      document.createElementNS(
+        NS,
+        "text"
+      );
+
+    label.classList.add(
+      "network-node-label"
+    );
+
+    label.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+    label.setAttribute(
+      "y",
+      circleRadius + 18
+    );
+
+    label.textContent =
+      node.name;
+
+
+    group.appendChild(
+      label
+    );
+
+
+    const amount =
+      document.createElementNS(
+        NS,
+        "text"
+      );
+
+    amount.classList.add(
+      "network-node-amount"
+    );
+
+    amount.setAttribute(
+      "text-anchor",
+      "middle"
+    );
+
+    amount.setAttribute(
+      "y",
+      circleRadius + 33
+    );
+
+    amount.textContent =
+      money(node.amount);
+
+
+    group.appendChild(
+      amount
+    );
+
+
+    root.appendChild(
+      group
+    );
+  });
+
+
+  /* ==================================================
+     CLICK + HOVER
+     ================================================== */
+
+  root
+    .querySelectorAll(
+      ".network-node-group"
+    )
+    .forEach(group => {
+
+      group.addEventListener(
+        "mouseenter",
+        () => {
+
+          const name =
+            group.dataset.name;
+
+          root
+            .querySelectorAll(
+              ".network-edge"
+            )
+            .forEach(edge => {
+
+              const connected =
+                edge.dataset.candidate === name ||
+                edge.dataset.donor === name;
+
+              edge.classList.toggle(
+                "active",
+                connected
+              );
+            });
+        }
+      );
+
+
+      group.addEventListener(
+        "mouseleave",
+        () => {
+
+          root
+            .querySelectorAll(
+              ".network-edge"
+            )
+            .forEach(edge => {
+
+              edge.classList.remove(
+                "active"
+              );
+            });
+        }
+      );
+
+
+      group.addEventListener(
+        "click",
+        () => {
+
+          const name =
+            group.dataset.name;
+
+          const type =
+            group.dataset.type;
+
+          window.selectedNetworkEntity = {
+            name,
+            type
+          };
+
+renderFocusedNetwork(
+  name,
+  type,
+  currentNodeContributions
+);
+        }
+      );
+    });
+}
+/* =========================================================
+   START APPLICATION
+   ========================================================= */
+
+loadData();
+</script>
+
+</body>
+</html>
