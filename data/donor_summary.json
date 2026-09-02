@@ -91027,7 +91027,7 @@
           "last_name": "Francis",
           "address": "",
           "city_state_zip": "",
-          "employer": "Not Employed",
+          "employer": "Ohio Army National Guard",
           "contribution_count": 1,
           "total_amount": 25.0,
           "first_contribution": "10/02/2025",
@@ -207277,7 +207277,7 @@
           "last_contribution": "08/24/2022"
         },
         {
-          "name": "Abood, John B",
+          "name": "Abood, John G",
           "first_name": "John",
           "last_name": "Abood",
           "address": "",
@@ -376436,8 +376436,8 @@
       "chamber": "House",
       "district": "32",
       "party": "Democrat",
-      "donor_count": 235,
-      "total_amount": 57121.49,
+      "donor_count": 262,
+      "total_amount": 64426.49,
       "donors": [
         {
           "name": "Craven Sr., Robert",
@@ -376512,6 +376512,30 @@
           "last_contribution": "03/30/2026"
         },
         {
+          "name": "Casale, Thomas G",
+          "first_name": "Thomas",
+          "last_name": "Casale",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Casale Auto Body",
+          "contribution_count": 2,
+          "total_amount": 1500.0,
+          "first_contribution": "04/17/2026",
+          "last_contribution": "08/21/2026"
+        },
+        {
+          "name": "Ceceri, Steven",
+          "first_name": "Steven",
+          "last_name": "Ceceri",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "New England Property Services Group",
+          "contribution_count": 2,
+          "total_amount": 1250.0,
+          "first_contribution": "04/16/2026",
+          "last_contribution": "08/25/2026"
+        },
+        {
           "name": "Simmons, John",
           "first_name": "John",
           "last_name": "Simmons",
@@ -376524,16 +376548,16 @@
           "last_contribution": "12/22/2025"
         },
         {
-          "name": "Ceceri, Steven",
-          "first_name": "Steven",
-          "last_name": "Ceceri",
+          "name": "Caldwell, David",
+          "first_name": "David",
+          "last_name": "Caldwell",
           "address": "",
           "city_state_zip": "",
-          "employer": "New England Property Services Group",
+          "employer": "Caldwell & Johnson",
           "contribution_count": 1,
           "total_amount": 1000.0,
-          "first_contribution": "04/16/2026",
-          "last_contribution": "04/16/2026"
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "DePetrillo, Thomas L.",
@@ -376680,6 +376704,18 @@
           "last_contribution": "03/15/2026"
         },
         {
+          "name": "Borges, Stephen",
+          "first_name": "Stephen",
+          "last_name": "Borges",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Borges Collision Center",
+          "contribution_count": 1,
+          "total_amount": 500.0,
+          "first_contribution": "08/21/2026",
+          "last_contribution": "08/21/2026"
+        },
+        {
           "name": "Carr, Robert",
           "first_name": "Robert",
           "last_name": "Carr",
@@ -376690,18 +376726,6 @@
           "total_amount": 500.0,
           "first_contribution": "08/03/2026",
           "last_contribution": "08/03/2026"
-        },
-        {
-          "name": "Casale, Thomas G",
-          "first_name": "Thomas",
-          "last_name": "Casale",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Casale Auto Body",
-          "contribution_count": 1,
-          "total_amount": 500.0,
-          "first_contribution": "04/17/2026",
-          "last_contribution": "04/17/2026"
         },
         {
           "name": "Cheng, Eileen",
@@ -376764,6 +376788,18 @@
           "last_contribution": "07/01/2026"
         },
         {
+          "name": "Restivo, Susan",
+          "first_name": "Susan",
+          "last_name": "Restivo",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 1,
+          "total_amount": 500.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "RI TROOPERS ASSOCIATION PAC",
           "first_name": "",
           "last_name": "RI TROOPERS ASSOCIATION PAC",
@@ -376824,6 +376860,30 @@
           "last_contribution": "07/23/2026"
         },
         {
+          "name": "Cicerchia, Ronald P.",
+          "first_name": "Ronald",
+          "last_name": "Cicerchia",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Retired",
+          "contribution_count": 2,
+          "total_amount": 300.0,
+          "first_contribution": "04/16/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
+          "name": "DISTRICT 1199 SEIU POLITICAL ACTION COMMITTEE-RI",
+          "first_name": "",
+          "last_name": "DISTRICT 1199 SEIU POLITICAL ACTION COMMITTEE-RI",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 300.0,
+          "first_contribution": "08/21/2026",
+          "last_contribution": "08/21/2026"
+        },
+        {
           "name": "Fede, Nicholas",
           "first_name": "Nicholas",
           "last_name": "Fede",
@@ -376834,6 +376894,18 @@
           "total_amount": 300.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Izzo, Dianne",
+          "first_name": "Dianne",
+          "last_name": "Izzo",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Self Employed Attorney",
+          "contribution_count": 6,
+          "total_amount": 300.0,
+          "first_contribution": "03/31/2026",
+          "last_contribution": "08/31/2026"
         },
         {
           "name": "RI ALLIANCE SSE SEIU COPE (Social Service Employees)",
@@ -376858,6 +376930,18 @@
           "total_amount": 300.0,
           "first_contribution": "04/01/2026",
           "last_contribution": "04/06/2026"
+        },
+        {
+          "name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
+          "first_name": "",
+          "last_name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 2,
+          "total_amount": 300.0,
+          "first_contribution": "04/01/2026",
+          "last_contribution": "08/23/2026"
         },
         {
           "name": "Thomson, Mary Noeline",
@@ -376896,6 +376980,18 @@
           "last_contribution": "03/29/2026"
         },
         {
+          "name": "Anderson, David",
+          "first_name": "David",
+          "last_name": "Anderson",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "OC Manufacturing Consultants LLC",
+          "contribution_count": 2,
+          "total_amount": 250.0,
+          "first_contribution": "03/31/2026",
+          "last_contribution": "08/21/2026"
+        },
+        {
           "name": "Beretta Sr., Norman",
           "first_name": "Norman",
           "last_name": "Beretta",
@@ -376918,6 +377014,18 @@
           "total_amount": 250.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Broudo, Melissa",
+          "first_name": "Melissa",
+          "last_name": "Broudo",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Decriminalize Sex Work",
+          "contribution_count": 1,
+          "total_amount": 250.0,
+          "first_contribution": "08/23/2026",
+          "last_contribution": "08/23/2026"
         },
         {
           "name": "Casimiro, Julie",
@@ -376954,6 +377062,18 @@
           "total_amount": 250.0,
           "first_contribution": "04/22/2026",
           "last_contribution": "04/22/2026"
+        },
+        {
+          "name": "Elson, Louis",
+          "first_name": "Louis",
+          "last_name": "Elson",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Palmaon Capital Partners",
+          "contribution_count": 1,
+          "total_amount": 250.0,
+          "first_contribution": "08/15/2026",
+          "last_contribution": "08/15/2026"
         },
         {
           "name": "Farrell, William",
@@ -377002,18 +377122,6 @@
           "total_amount": 250.0,
           "first_contribution": "04/17/2026",
           "last_contribution": "04/17/2026"
-        },
-        {
-          "name": "Izzo, Dianne",
-          "first_name": "Dianne",
-          "last_name": "Izzo",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Self Employed Attorney",
-          "contribution_count": 5,
-          "total_amount": 250.0,
-          "first_contribution": "03/31/2026",
-          "last_contribution": "07/31/2026"
         },
         {
           "name": "Lennon, Francis",
@@ -377074,6 +377182,18 @@
           "total_amount": 250.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Shanley, Evan",
+          "first_name": "Evan",
+          "last_name": "Shanley",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Gursky Wiens and Shanley, Attorneys at Law, Ltd.",
+          "contribution_count": 1,
+          "total_amount": 250.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "Skenyon, Leo",
@@ -377160,6 +377280,18 @@
           "last_contribution": "04/13/2026"
         },
         {
+          "name": "Callaghan, James",
+          "first_name": "James",
+          "last_name": "Callaghan",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Callaghan & Callaghan",
+          "contribution_count": 1,
+          "total_amount": 200.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "DeLuca, Antony",
           "first_name": "Antony",
           "last_name": "DeLuca",
@@ -377172,6 +377304,18 @@
           "last_contribution": "07/08/2026"
         },
         {
+          "name": "Donohue, Michael",
+          "first_name": "Michael",
+          "last_name": "Donohue",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Retired",
+          "contribution_count": 2,
+          "total_amount": 200.0,
+          "first_contribution": "05/31/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "Godfrey, Robert",
           "first_name": "Robert",
           "last_name": "Godfrey",
@@ -377182,6 +377326,18 @@
           "total_amount": 200.0,
           "first_contribution": "04/20/2026",
           "last_contribution": "04/20/2026"
+        },
+        {
+          "name": "INDEPENDENT CONSTABLE ASSOCIATION PAC",
+          "first_name": "",
+          "last_name": "INDEPENDENT CONSTABLE ASSOCIATION PAC",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 2,
+          "total_amount": 200.0,
+          "first_contribution": "04/10/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "JOHNSTON FEDERATION OF TEACHERS LOCAL 1702 PAC",
@@ -377232,6 +377388,18 @@
           "last_contribution": "05/10/2026"
         },
         {
+          "name": "Lopes, Leonard",
+          "first_name": "Leonard",
+          "last_name": "Lopes",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "The Victor Group",
+          "contribution_count": 2,
+          "total_amount": 200.0,
+          "first_contribution": "08/21/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "Murphy, William",
           "first_name": "William",
           "last_name": "Murphy",
@@ -377254,6 +377422,18 @@
           "total_amount": 200.0,
           "first_contribution": "05/27/2026",
           "last_contribution": "05/27/2026"
+        },
+        {
+          "name": "Ode, Judith",
+          "first_name": "Judith",
+          "last_name": "Ode",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Retired",
+          "contribution_count": 1,
+          "total_amount": 200.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "Parker, Robert F.",
@@ -377326,6 +377506,18 @@
           "total_amount": 200.0,
           "first_contribution": "06/16/2026",
           "last_contribution": "06/16/2026"
+        },
+        {
+          "name": "Tetreault, Richard",
+          "first_name": "Richard",
+          "last_name": "Tetreault",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 2,
+          "total_amount": 200.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "Thompson, Anthony R.",
@@ -377496,18 +377688,6 @@
           "last_contribution": "04/16/2026"
         },
         {
-          "name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
-          "first_name": "",
-          "last_name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 1,
-          "total_amount": 150.0,
-          "first_contribution": "04/01/2026",
-          "last_contribution": "04/01/2026"
-        },
-        {
           "name": "Sheehan, James",
           "first_name": "James",
           "last_name": "Sheehan",
@@ -377556,6 +377736,30 @@
           "last_contribution": "06/29/2026"
         },
         {
+          "name": "DiBiase, Peter A.",
+          "first_name": "Peter",
+          "last_name": "DiBiase",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Peter A. DiBiase, Esq.",
+          "contribution_count": 2,
+          "total_amount": 125.0,
+          "first_contribution": "04/13/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
+          "name": "Lyman, Lynden",
+          "first_name": "Lynden",
+          "last_name": "Lyman",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Self Employed",
+          "contribution_count": 2,
+          "total_amount": 105.0,
+          "first_contribution": "06/29/2026",
+          "last_contribution": "08/21/2026"
+        },
+        {
           "name": "Almonte, Ernest A.",
           "first_name": "Ernest",
           "last_name": "Almonte",
@@ -377590,18 +377794,6 @@
           "total_amount": 100.0,
           "first_contribution": "07/11/2026",
           "last_contribution": "07/11/2026"
-        },
-        {
-          "name": "Anderson, David",
-          "first_name": "David",
-          "last_name": "Anderson",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "OC Manufacturing Consultants LLC",
-          "contribution_count": 1,
-          "total_amount": 100.0,
-          "first_contribution": "03/31/2026",
-          "last_contribution": "03/31/2026"
         },
         {
           "name": "Annaldo, Andrew J.",
@@ -377676,6 +377868,18 @@
           "last_contribution": "04/16/2026"
         },
         {
+          "name": "Beck, Henry",
+          "first_name": "Henry",
+          "last_name": "Beck",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "UAS",
+          "contribution_count": 2,
+          "total_amount": 100.0,
+          "first_contribution": "03/20/2026",
+          "last_contribution": "08/12/2026"
+        },
+        {
           "name": "Brady, Edward",
           "first_name": "Edward",
           "last_name": "Brady",
@@ -377718,18 +377922,6 @@
           "address": "",
           "city_state_zip": "",
           "employer": "International Brotherhood of Police Officers",
-          "contribution_count": 1,
-          "total_amount": 100.0,
-          "first_contribution": "04/16/2026",
-          "last_contribution": "04/16/2026"
-        },
-        {
-          "name": "Cicerchia, Ronald P.",
-          "first_name": "Ronald",
-          "last_name": "Cicerchia",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Retired",
           "contribution_count": 1,
           "total_amount": 100.0,
           "first_contribution": "04/16/2026",
@@ -377892,18 +378084,6 @@
           "last_contribution": "04/16/2026"
         },
         {
-          "name": "Donohue, Michael",
-          "first_name": "Michael",
-          "last_name": "Donohue",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Retired",
-          "contribution_count": 1,
-          "total_amount": 100.0,
-          "first_contribution": "05/31/2026",
-          "last_contribution": "05/31/2026"
-        },
-        {
           "name": "Dufault, Guy",
           "first_name": "Guy",
           "last_name": "Dufault",
@@ -377962,6 +378142,18 @@
           "total_amount": 100.0,
           "first_contribution": "07/02/2026",
           "last_contribution": "07/02/2026"
+        },
+        {
+          "name": "Fiore, Roland",
+          "first_name": "Roland",
+          "last_name": "Fiore",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "South County Sand & Gravel",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/27/2026",
+          "last_contribution": "08/27/2026"
         },
         {
           "name": "Fonseca, Alison",
@@ -378048,6 +378240,18 @@
           "last_contribution": "04/16/2026"
         },
         {
+          "name": "Hainsworth, Jamie",
+          "first_name": "Jamie",
+          "last_name": "Hainsworth",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Rhode Island Judiciary",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "Hammond, Erica",
           "first_name": "Erica",
           "last_name": "Hammond",
@@ -378094,18 +378298,6 @@
           "total_amount": 100.0,
           "first_contribution": "04/09/2026",
           "last_contribution": "04/09/2026"
-        },
-        {
-          "name": "INDEPENDENT CONSTABLE ASSOCIATION PAC",
-          "first_name": "",
-          "last_name": "INDEPENDENT CONSTABLE ASSOCIATION PAC",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 1,
-          "total_amount": 100.0,
-          "first_contribution": "04/10/2026",
-          "last_contribution": "04/10/2026"
         },
         {
           "name": "IRON WORKERS LOCAL 37",
@@ -378180,6 +378372,18 @@
           "last_contribution": "04/10/2026"
         },
         {
+          "name": "Kreiger, Steven",
+          "first_name": "Steven",
+          "last_name": "Kreiger",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Pangborn Premier Eye Care",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/15/2026",
+          "last_contribution": "08/15/2026"
+        },
+        {
           "name": "Ladouceur, Ed",
           "first_name": "Ed",
           "last_name": "Ladouceur",
@@ -378204,6 +378408,18 @@
           "last_contribution": "04/10/2026"
         },
         {
+          "name": "Lombardi, James",
+          "first_name": "James",
+          "last_name": "Lombardi",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "State of Rhode Island",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
           "name": "Lynch, Kevin",
           "first_name": "Kevin",
           "last_name": "Lynch",
@@ -378214,6 +378430,18 @@
           "total_amount": 100.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Marshall, Robert",
+          "first_name": "Robert",
+          "last_name": "Marshall",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Marshall & Associates",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "Martesian, Jason",
@@ -378372,6 +378600,30 @@
           "last_contribution": "04/16/2026"
         },
         {
+          "name": "Oppenheimer, David",
+          "first_name": "David",
+          "last_name": "Oppenheimer",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Retired",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/24/2026",
+          "last_contribution": "08/24/2026"
+        },
+        {
+          "name": "Oppenlander, Nan",
+          "first_name": "Nan",
+          "last_name": "Oppenlander",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/17/2026",
+          "last_contribution": "08/17/2026"
+        },
+        {
           "name": "Paolino Jr., Joseph R.",
           "first_name": "Joseph",
           "last_name": "Paolino",
@@ -378406,6 +378658,18 @@
           "total_amount": 100.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Plunkett Esq., Thomas C.",
+          "first_name": "Thomas",
+          "last_name": "Plunkett",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Kiernan, Plunkett & Redihan, LLP",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
         },
         {
           "name": "PROVIDENCE RI CENTRAL FEDERATED COUNCIL AFL-CIO",
@@ -378516,6 +378780,18 @@
           "last_contribution": "04/16/2026"
         },
         {
+          "name": "Shea Esq., Kenneth",
+          "first_name": "Kenneth",
+          "last_name": "Shea",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Kenneth J. Shea, LLC",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/17/2026",
+          "last_contribution": "08/17/2026"
+        },
+        {
           "name": "Spremulli, Lucas",
           "first_name": "Lucas",
           "last_name": "Spremulli",
@@ -378612,6 +378888,18 @@
           "last_contribution": "04/01/2026"
         },
         {
+          "name": "White Esq., David",
+          "first_name": "David",
+          "last_name": "White",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Breakstone, White & Gluck, P.C.",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "08/31/2026",
+          "last_contribution": "08/31/2026"
+        },
+        {
           "name": "Wolf, Gayle",
           "first_name": "Gayle",
           "last_name": "Wolf",
@@ -378684,18 +378972,6 @@
           "last_contribution": "04/16/2026"
         },
         {
-          "name": "Lyman, Lynden",
-          "first_name": "Lynden",
-          "last_name": "Lyman",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Self Employed",
-          "contribution_count": 1,
-          "total_amount": 75.0,
-          "first_contribution": "06/29/2026",
-          "last_contribution": "06/29/2026"
-        },
-        {
           "name": "Anderson, Ava",
           "first_name": "Ava",
           "last_name": "Anderson",
@@ -378732,18 +379008,6 @@
           "last_contribution": "03/31/2026"
         },
         {
-          "name": "Beck, Henry",
-          "first_name": "Henry",
-          "last_name": "Beck",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "UAS",
-          "contribution_count": 1,
-          "total_amount": 50.0,
-          "first_contribution": "03/20/2026",
-          "last_contribution": "03/20/2026"
-        },
-        {
           "name": "Bixby, Beth",
           "first_name": "Beth",
           "last_name": "Bixby",
@@ -378766,6 +379030,30 @@
           "total_amount": 50.0,
           "first_contribution": "04/09/2026",
           "last_contribution": "04/09/2026"
+        },
+        {
+          "name": "Briody, Thomas",
+          "first_name": "Thomas",
+          "last_name": "Briody",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Law Offices of Thomas G. Briody",
+          "contribution_count": 1,
+          "total_amount": 50.0,
+          "first_contribution": "08/26/2026",
+          "last_contribution": "08/26/2026"
+        },
+        {
+          "name": "Carmichael, Paula",
+          "first_name": "Paula",
+          "last_name": "Carmichael",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Reliant Medical Group",
+          "contribution_count": 1,
+          "total_amount": 50.0,
+          "first_contribution": "08/17/2026",
+          "last_contribution": "08/17/2026"
         },
         {
           "name": "Cherry, Anthony",
@@ -378900,6 +379188,18 @@
           "last_contribution": "03/19/2026"
         },
         {
+          "name": "Mageau, James",
+          "first_name": "James",
+          "last_name": "Mageau",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 1,
+          "total_amount": 50.0,
+          "first_contribution": "08/24/2026",
+          "last_contribution": "08/24/2026"
+        },
+        {
           "name": "Manock, Nathaniel",
           "first_name": "Nathaniel",
           "last_name": "Manock",
@@ -378936,6 +379236,18 @@
           "last_contribution": "04/16/2026"
         },
         {
+          "name": "NASW PACE RI (National Association of Social Workers for Candidate Election)",
+          "first_name": "",
+          "last_name": "NASW PACE RI (National Association of Social Workers for Candidate Election)",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 50.0,
+          "first_contribution": "08/25/2026",
+          "last_contribution": "08/25/2026"
+        },
+        {
           "name": "North, Emma",
           "first_name": "Emma",
           "last_name": "North",
@@ -378946,6 +379258,18 @@
           "total_amount": 50.0,
           "first_contribution": "04/16/2026",
           "last_contribution": "04/16/2026"
+        },
+        {
+          "name": "Radcliffe, David",
+          "first_name": "David",
+          "last_name": "Radcliffe",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "The New School",
+          "contribution_count": 2,
+          "total_amount": 50.0,
+          "first_contribution": "03/21/2026",
+          "last_contribution": "08/21/2026"
         },
         {
           "name": "Rafi, Nancy",
@@ -379056,6 +379380,18 @@
           "last_contribution": "03/30/2026"
         },
         {
+          "name": "Anesta, Ann",
+          "first_name": "Ann",
+          "last_name": "Anesta",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 1,
+          "total_amount": 25.0,
+          "first_contribution": "08/13/2026",
+          "last_contribution": "08/13/2026"
+        },
+        {
           "name": "Canonie, Carson",
           "first_name": "Carson",
           "last_name": "Canonie",
@@ -379078,18 +379414,6 @@
           "total_amount": 25.0,
           "first_contribution": "06/14/2026",
           "last_contribution": "06/14/2026"
-        },
-        {
-          "name": "DiBiase, Peter A.",
-          "first_name": "Peter",
-          "last_name": "DiBiase",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "Peter A. DiBiase, Esq.",
-          "contribution_count": 1,
-          "total_amount": 25.0,
-          "first_contribution": "04/13/2026",
-          "last_contribution": "04/13/2026"
         },
         {
           "name": "Harvey, Donna",
@@ -379126,6 +379450,18 @@
           "total_amount": 25.0,
           "first_contribution": "06/14/2026",
           "last_contribution": "06/14/2026"
+        },
+        {
+          "name": "Michaud, Shelagh",
+          "first_name": "Shelagh",
+          "last_name": "Michaud",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "Not employed",
+          "contribution_count": 1,
+          "total_amount": 25.0,
+          "first_contribution": "09/01/2026",
+          "last_contribution": "09/01/2026"
         },
         {
           "name": "Onorato, Samuel",
@@ -379186,18 +379522,6 @@
           "total_amount": 25.0,
           "first_contribution": "03/24/2026",
           "last_contribution": "03/24/2026"
-        },
-        {
-          "name": "Radcliffe, David",
-          "first_name": "David",
-          "last_name": "Radcliffe",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "The New School",
-          "contribution_count": 1,
-          "total_amount": 25.0,
-          "first_contribution": "03/21/2026",
-          "last_contribution": "03/21/2026"
         },
         {
           "name": "Rauschenbach, Matthew",
