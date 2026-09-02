@@ -1,0 +1,1132 @@
+[
+  {
+    "candidate_id": "ri-house-1",
+    "name": "Edith H. Ajello",
+    "chamber": "House",
+    "district": 1,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-ajello@rilegislature.gov",
+    "org_id": 2169
+  },
+  {
+    "candidate_id": "ri-house-2",
+    "name": "Christopher R. Blazejewski",
+    "chamber": "House",
+    "district": 2,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-blazejewski@rilegislature.gov",
+    "org_id": 7030
+  },
+  {
+    "candidate_id": "ri-house-3",
+    "name": "Nathan W. Biah",
+    "chamber": "House",
+    "district": 3,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-biah@rilegislature.gov",
+    "org_id": 8994
+  },
+  {
+    "candidate_id": "ri-house-4",
+    "name": "Rebecca M. Kislak",
+    "chamber": "House",
+    "district": 4,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-kislak@rilegislature.gov",
+    "org_id": 8587
+  },
+  {
+    "candidate_id": "ri-house-5",
+    "name": "Anthony J. DeSimone",
+    "chamber": "House",
+    "district": 5,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-desimone@rilegislature.gov",
+    "org_id": 9725
+  },
+  {
+    "candidate_id": "ri-house-6",
+    "name": "Raymond A. Hull",
+    "chamber": "House",
+    "district": 6,
+    "party": "Democrat",
+    "communities": "Providence, North Providence",
+    "email": "rep-hull@rilegislature.gov",
+    "org_id": 7021
+  },
+  {
+    "candidate_id": "ri-house-7",
+    "name": "David Morales",
+    "chamber": "House",
+    "district": 7,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-morales@rilegislature.gov",
+    "org_id": 8997
+  },
+  {
+    "candidate_id": "ri-house-8",
+    "name": "John J. Lombardi",
+    "chamber": "House",
+    "district": 8,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-lombardi@rilegislature.gov",
+    "org_id": 476
+  },
+  {
+    "candidate_id": "ri-house-9",
+    "name": "Enrique George Sanchez",
+    "chamber": "House",
+    "district": 9,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-sanchez@rilegislature.gov",
+    "org_id": 9358
+  },
+  {
+    "candidate_id": "ri-house-10",
+    "name": "Scott A. Slater",
+    "chamber": "House",
+    "district": 10,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-slater@rilegislature.gov",
+    "org_id": 6912
+  },
+  {
+    "candidate_id": "ri-house-11",
+    "name": "Grace Diaz",
+    "chamber": "House",
+    "district": 11,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-diaz@rilegislature.gov",
+    "org_id": 5749
+  },
+  {
+    "candidate_id": "ri-house-12",
+    "name": "Jose F. Batista",
+    "chamber": "House",
+    "district": 12,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "rep-batista@rilegislature.gov",
+    "org_id": 8592
+  },
+  {
+    "candidate_id": "ri-house-13",
+    "name": "Ramon A. Perez",
+    "chamber": "House",
+    "district": 13,
+    "party": "Democrat",
+    "communities": "Providence, Johnston",
+    "email": "rep-perez@rilegislature.gov",
+    "org_id": 6914
+  },
+  {
+    "candidate_id": "ri-house-14",
+    "name": "Charlene M. Lima",
+    "chamber": "House",
+    "district": 14,
+    "party": "Democrat",
+    "communities": "Cranston, Providence",
+    "email": "rep-lima@rilegislature.gov",
+    "org_id": 2191
+  },
+  {
+    "candidate_id": "ri-house-15",
+    "name": "Christopher G. Paplauskas",
+    "chamber": "House",
+    "district": 15,
+    "party": "Republican",
+    "communities": "Cranston",
+    "email": "rep-paplauskas@rilegislature.gov",
+    "org_id": 7490
+  },
+  {
+    "candidate_id": "ri-house-16",
+    "name": "Brandon C. Potter",
+    "chamber": "House",
+    "district": 16,
+    "party": "Democrat",
+    "communities": "Cranston",
+    "email": "rep-potter@rilegislature.gov",
+    "org_id": 9055
+  },
+  {
+    "candidate_id": "ri-house-17",
+    "name": "Jacquelyn M. Baginski",
+    "chamber": "House",
+    "district": 17,
+    "party": "Democrat",
+    "communities": "Cranston",
+    "email": "rep-baginski@rilegislature.gov",
+    "org_id": 7476
+  },
+  {
+    "candidate_id": "ri-house-18",
+    "name": "Arthur Handy",
+    "chamber": "House",
+    "district": 18,
+    "party": "Democrat",
+    "communities": "Cranston",
+    "email": "rep-handy@rilegislature.gov",
+    "org_id": 5066
+  },
+  {
+    "candidate_id": "ri-house-19",
+    "name": "Joseph M. McNamara",
+    "chamber": "House",
+    "district": 19,
+    "party": "Democrat",
+    "communities": "Warwick, Cranston",
+    "email": "rep-mcnamara@rilegislature.gov",
+    "org_id": 2859
+  },
+  {
+    "candidate_id": "ri-house-20",
+    "name": "David A. Bennett",
+    "chamber": "House",
+    "district": 20,
+    "party": "Democrat",
+    "communities": "Warwick, Cranston",
+    "email": "rep-bennett@rilegislature.gov",
+    "org_id": 6813
+  },
+  {
+    "candidate_id": "ri-house-21",
+    "name": "Marie A. Hopkins",
+    "chamber": "House",
+    "district": 21,
+    "party": "Republican",
+    "communities": "Warwick",
+    "email": "rep-hopkins@rilegislature.gov",
+    "org_id": 9366
+  },
+  {
+    "candidate_id": "ri-house-22",
+    "name": "Joseph J. Solomon, Jr.",
+    "chamber": "House",
+    "district": 22,
+    "party": "Democrat",
+    "communities": "Warwick",
+    "email": "rep-solomon@rilegislature.gov",
+    "org_id": 7303
+  },
+  {
+    "candidate_id": "ri-house-23",
+    "name": "K. Joseph Shekarchi",
+    "chamber": "House",
+    "district": 23,
+    "party": "Democrat",
+    "communities": "Warwick",
+    "email": "rep-shekarchi@rilegislature.gov",
+    "org_id": 6824
+  },
+  {
+    "candidate_id": "ri-house-24",
+    "name": "Evan P. Shanley",
+    "chamber": "House",
+    "district": 24,
+    "party": "Democrat",
+    "communities": "Warwick, East Greenwich",
+    "email": "rep-shanley@rilegislature.gov",
+    "org_id": 8207
+  },
+  {
+    "candidate_id": "ri-house-25",
+    "name": "Thomas E. Noret",
+    "chamber": "House",
+    "district": 25,
+    "party": "Democrat",
+    "communities": "Coventry, West Warwick",
+    "email": "rep-noret@rilegislature.gov",
+    "org_id": 8698
+  },
+  {
+    "candidate_id": "ri-house-26",
+    "name": "Earl A. Read, III",
+    "chamber": "House",
+    "district": 26,
+    "party": "Democrat",
+    "communities": "West Warwick, Coventry, Warwick",
+    "email": "rep-read@rilegislature.gov",
+    "org_id": 9772
+  },
+  {
+    "candidate_id": "ri-house-27",
+    "name": "Patricia A. Serpa",
+    "chamber": "House",
+    "district": 27,
+    "party": "Democrat",
+    "communities": "West Warwick, Coventry",
+    "email": "rep-serpa@rilegislature.gov",
+    "org_id": 4961
+  },
+  {
+    "candidate_id": "ri-house-28",
+    "name": "George A Nardone",
+    "chamber": "House",
+    "district": 28,
+    "party": "Republican",
+    "communities": "Coventry",
+    "email": "rep-nardone@rilegislature.gov",
+    "org_id": 8610
+  },
+  {
+    "candidate_id": "ri-house-29",
+    "name": "Sherry Roberts",
+    "chamber": "House",
+    "district": 29,
+    "party": "Republican",
+    "communities": "West Greenwich, Coventry",
+    "email": "rep-roberts@rilegislature.gov",
+    "org_id": 7882
+  },
+  {
+    "candidate_id": "ri-house-30",
+    "name": "Justine A. Caldwell",
+    "chamber": "House",
+    "district": 30,
+    "party": "Democrat",
+    "communities": "East Greenwich, West Greenwich",
+    "email": "rep-caldwell@rilegislature.gov",
+    "org_id": 8572
+  },
+  {
+    "candidate_id": "ri-house-31",
+    "name": "Julie A. Casimiro",
+    "chamber": "House",
+    "district": 31,
+    "party": "Democrat",
+    "communities": "North Kingstown, Exeter",
+    "email": "rep-casimiro@rilegislature.gov",
+    "org_id": 7889
+  },
+  {
+    "candidate_id": "ri-house-32",
+    "name": "Robert E. Craven, Sr.",
+    "chamber": "House",
+    "district": 32,
+    "party": "Democrat",
+    "communities": "North Kingstown",
+    "email": "rep-craven@rilegislature.gov",
+    "org_id": 9140
+  },
+  {
+    "candidate_id": "ri-house-33",
+    "name": "Carol Hagan McEntee",
+    "chamber": "House",
+    "district": 33,
+    "party": "Democrat",
+    "communities": "South Kingstown, Narragansett",
+    "email": "rep-mcentee@rilegislature.gov",
+    "org_id": 2834
+  },
+  {
+    "candidate_id": "ri-house-34",
+    "name": "Teresa Ann Tanzi",
+    "chamber": "House",
+    "district": 34,
+    "party": "Democrat",
+    "communities": "South Kingstown, Narragansett",
+    "email": "rep-tanzi@rilegislature.gov",
+    "org_id": 6892
+  },
+  {
+    "candidate_id": "ri-house-35",
+    "name": "Kathleen A. Fogarty",
+    "chamber": "House",
+    "district": 35,
+    "party": "Democrat",
+    "communities": "South Kingstown",
+    "email": "rep-fogarty@rilegislature.gov",
+    "org_id": 5435
+  },
+  {
+    "candidate_id": "ri-house-36",
+    "name": "Tina L. Spears",
+    "chamber": "House",
+    "district": 36,
+    "party": "Democrat",
+    "communities": "Charlestown, New Shoreham, South Kingstown, Westerly",
+    "email": "rep-spears@rilegislature.gov",
+    "org_id": 9385
+  },
+  {
+    "candidate_id": "ri-house-37",
+    "name": "Samuel A. Azzinaro",
+    "chamber": "House",
+    "district": 37,
+    "party": "Democrat",
+    "communities": "Westerly",
+    "email": "rep-azzinaro@rilegislature.gov",
+    "org_id": 913
+  },
+  {
+    "candidate_id": "ri-house-38",
+    "name": "Brian Patrick Kennedy",
+    "chamber": "House",
+    "district": 38,
+    "party": "Democrat",
+    "communities": "Hopkinton, Westerly",
+    "email": "rep-kennedy@rilegislature.gov",
+    "org_id": 1364
+  },
+  {
+    "candidate_id": "ri-house-39",
+    "name": "Megan L. Cotter",
+    "chamber": "House",
+    "district": 39,
+    "party": "Democrat",
+    "communities": "Exeter, Richmond, Hopkinton",
+    "email": "rep-cotter@rilegislature.gov",
+    "org_id": 9018
+  },
+  {
+    "candidate_id": "ri-house-40",
+    "name": "Michael W. Chippendale",
+    "chamber": "House",
+    "district": 40,
+    "party": "Republican",
+    "communities": "Foster, Glocester, Coventry",
+    "email": "rep-chippendale@rilegislature.gov",
+    "org_id": 6999
+  },
+  {
+    "candidate_id": "ri-house-41",
+    "name": "Robert J. Quattrocchi",
+    "chamber": "House",
+    "district": 41,
+    "party": "Republican",
+    "communities": "Scituate, Cranston",
+    "email": "rep-quattrocchi@rilegislature.gov",
+    "org_id": 8124
+  },
+  {
+    "candidate_id": "ri-house-42",
+    "name": "Richard R. Fascia",
+    "chamber": "House",
+    "district": 42,
+    "party": "Republican",
+    "communities": "Johnston, Cranston",
+    "email": "rep-fascia@rilegislature.gov",
+    "org_id": 7247
+  },
+  {
+    "candidate_id": "ri-house-43",
+    "name": "Deborah A. Fellela",
+    "chamber": "House",
+    "district": 43,
+    "party": "Democrat",
+    "communities": "Johnston",
+    "email": "rep-fellela@rilegislature.gov",
+    "org_id": 6385
+  },
+  {
+    "candidate_id": "ri-house-44",
+    "name": "Gregory J. Costantino",
+    "chamber": "House",
+    "district": 44,
+    "party": "Democrat",
+    "communities": "Lincoln, Smithfield, Johnston",
+    "email": "rep-costantino@rilegislature.gov",
+    "org_id": 843
+  },
+  {
+    "candidate_id": "ri-house-45",
+    "name": "Mia A. Ackerman",
+    "chamber": "House",
+    "district": 45,
+    "party": "Democrat",
+    "communities": "Cumberland, Lincoln",
+    "email": "rep-ackerman@rilegislature.gov",
+    "org_id": 6184
+  },
+  {
+    "candidate_id": "ri-house-46",
+    "name": "Mary Ann Shallcross Smith",
+    "chamber": "House",
+    "district": 46,
+    "party": "Democrat",
+    "communities": "Lincoln, Pawtucket",
+    "email": "rep-shallcross-smith@rilegislature.gov",
+    "org_id": 1686
+  },
+  {
+    "candidate_id": "ri-house-47",
+    "name": "David J. Place",
+    "chamber": "House",
+    "district": 47,
+    "party": "Republican",
+    "communities": "Burrillville, Glocester",
+    "email": "rep-place@rilegislature.gov",
+    "org_id": 6988
+  },
+  {
+    "candidate_id": "ri-house-48",
+    "name": "Brian C. Newberry",
+    "chamber": "House",
+    "district": 48,
+    "party": "Republican",
+    "communities": "North Smithfield, Burrillville",
+    "email": "rep-newberry@rilegislature.gov",
+    "org_id": 5624
+  },
+  {
+    "candidate_id": "ri-house-49",
+    "name": "Jon D. Brien",
+    "chamber": "House",
+    "district": 49,
+    "party": "Independent",
+    "communities": "Woonsocket, North Smithfield",
+    "email": "rep-brien@rilegislature.gov",
+    "org_id": 6263
+  },
+  {
+    "candidate_id": "ri-house-50",
+    "name": "Stephen M. Casey",
+    "chamber": "House",
+    "district": 50,
+    "party": "Democrat",
+    "communities": "Woonsocket",
+    "email": "rep-casey@rilegislature.gov",
+    "org_id": 7521
+  },
+  {
+    "candidate_id": "ri-house-51",
+    "name": "Robert D. Phillips",
+    "chamber": "House",
+    "district": 51,
+    "party": "Democrat",
+    "communities": "Woonsocket, Cumberland",
+    "email": "rep-phillips@rilegislature.gov",
+    "org_id": 6102
+  },
+  {
+    "candidate_id": "ri-house-52",
+    "name": "Alex Marszalkowski",
+    "chamber": "House",
+    "district": 52,
+    "party": "Democrat",
+    "communities": "Cumberland",
+    "email": "rep-marszalkowski@rilegislature.gov",
+    "org_id": 8224
+  },
+  {
+    "candidate_id": "ri-house-53",
+    "name": "Paul M. Santucci",
+    "chamber": "House",
+    "district": 53,
+    "party": "Republican",
+    "communities": "Smithfield, Glocester",
+    "email": "rep-santucci@rilegislature.gov",
+    "org_id": 8461
+  },
+  {
+    "candidate_id": "ri-house-54",
+    "name": "William W.O'Brien",
+    "chamber": "House",
+    "district": 54,
+    "party": "Democrat",
+    "communities": "North Providence",
+    "email": "rep-obrien@rilegislature.gov",
+    "org_id": 7072
+  },
+  {
+    "candidate_id": "ri-house-55",
+    "name": "Arthur J. Corvese",
+    "chamber": "House",
+    "district": 55,
+    "party": "Democrat",
+    "communities": "North Providence",
+    "email": "rep-corvese@rilegislature.gov",
+    "org_id": 1082
+  },
+  {
+    "candidate_id": "ri-house-56",
+    "name": "Joshua J. Giraldo",
+    "chamber": "House",
+    "district": 56,
+    "party": "Democrat",
+    "communities": "Central Falls",
+    "email": "rep-giraldo@rilegislature.gov",
+    "org_id": 6923
+  },
+  {
+    "candidate_id": "ri-house-57",
+    "name": "Brandon T. Voas",
+    "chamber": "House",
+    "district": 57,
+    "party": "Democrat",
+    "communities": "Cumberland, Central Falls",
+    "email": "rep-voas@rilegislature.gov",
+    "org_id": 9685
+  },
+  {
+    "candidate_id": "ri-house-58",
+    "name": "Cherie L. Cruz",
+    "chamber": "House",
+    "district": 58,
+    "party": "Democrat",
+    "communities": "Pawtucket",
+    "email": "rep-cruz@rilegislature.gov",
+    "org_id": 9429
+  },
+  {
+    "candidate_id": "ri-house-59",
+    "name": "Jennifer A. Stewart",
+    "chamber": "House",
+    "district": 59,
+    "party": "Democrat",
+    "communities": "Pawtucket",
+    "email": "rep-stewart@rilegislature.gov",
+    "org_id": 9417
+  },
+  {
+    "candidate_id": "ri-house-60",
+    "name": "Karen Alzate",
+    "chamber": "House",
+    "district": 60,
+    "party": "Democrat",
+    "communities": "Pawtucket, Central Falls",
+    "email": "rep-alzate@rilegislature.gov",
+    "org_id": 8678
+  },
+  {
+    "candidate_id": "ri-house-61",
+    "name": "Leonela Felix",
+    "chamber": "House",
+    "district": 61,
+    "party": "Democrat",
+    "communities": "Pawtucket",
+    "email": "rep-felix@rilegislature.gov",
+    "org_id": 9032
+  },
+  {
+    "candidate_id": "ri-house-62",
+    "name": "Mary Duffy Messier",
+    "chamber": "House",
+    "district": 62,
+    "party": "Democrat",
+    "communities": "Pawtucket",
+    "email": "rep-messier@rilegislature.gov",
+    "org_id": 6929
+  },
+  {
+    "candidate_id": "ri-house-63",
+    "name": "Katherine S. Kazarian",
+    "chamber": "House",
+    "district": 63,
+    "party": "Democrat",
+    "communities": "East Providence, Pawtucket",
+    "email": "rep-kazarian@rilegislature.gov",
+    "org_id": 7741
+  },
+  {
+    "candidate_id": "ri-house-64",
+    "name": "Jenni A. Furtado",
+    "chamber": "House",
+    "district": 64,
+    "party": "Democrat",
+    "communities": "East Providence, Pawtucket",
+    "email": "rep-furtado@rilegislature.gov",
+    "org_id": 9205
+  },
+  {
+    "candidate_id": "ri-house-65",
+    "name": "Matt S. Dawson",
+    "chamber": "House",
+    "district": 65,
+    "party": "Democrat",
+    "communities": "East Providence",
+    "email": "rep-dawson@rilegislature.gov",
+    "org_id": 9362
+  },
+  {
+    "candidate_id": "ri-house-66",
+    "name": "Jennifer Smith Boylan",
+    "chamber": "House",
+    "district": 66,
+    "party": "Democrat",
+    "communities": "Barrington, East Providence",
+    "email": "rep-boylan@rilegislature.gov",
+    "org_id": 9461
+  },
+  {
+    "candidate_id": "ri-house-67",
+    "name": "Jason Knight",
+    "chamber": "House",
+    "district": 67,
+    "party": "Democrat",
+    "communities": "Barrington, Warren",
+    "email": "rep-knight@rilegislature.gov",
+    "org_id": 8229
+  },
+  {
+    "candidate_id": "ri-house-68",
+    "name": "June Speakman",
+    "chamber": "House",
+    "district": 68,
+    "party": "Democrat",
+    "communities": "Warren, Bristol",
+    "email": "rep-speakman@rilegislature.gov",
+    "org_id": 4328
+  },
+  {
+    "candidate_id": "ri-house-69",
+    "name": "Susan R. Donovan",
+    "chamber": "House",
+    "district": 69,
+    "party": "Democrat",
+    "communities": "Bristol, Portsmouth",
+    "email": "rep-donovan@rilegislature.gov",
+    "org_id": 8004
+  },
+  {
+    "candidate_id": "ri-house-70",
+    "name": "John G. Edwards",
+    "chamber": "House",
+    "district": 70,
+    "party": "Democrat",
+    "communities": "Tiverton",
+    "email": "rep-edwards@rilegislature.gov",
+    "org_id": 5628
+  },
+  {
+    "candidate_id": "ri-house-71",
+    "name": "Michelle E. McGaw",
+    "chamber": "House",
+    "district": 71,
+    "party": "Democrat",
+    "communities": "Portsmouth, Little Compton, Tiverton",
+    "email": "rep-mcgaw@rilegislature.gov",
+    "org_id": 8978
+  },
+  {
+    "candidate_id": "ri-house-72",
+    "name": "Terri Cortvriend",
+    "chamber": "House",
+    "district": 72,
+    "party": "Democrat",
+    "communities": "Portsmouth. Middletown",
+    "email": "rep-cortvriend@rilegislature.gov",
+    "org_id": 5823
+  },
+  {
+    "candidate_id": "ri-house-73",
+    "name": "Marvin L. Abney",
+    "chamber": "House",
+    "district": 73,
+    "party": "Democrat",
+    "communities": "Newport, Middletown",
+    "email": "rep-abney@rilegislature.gov",
+    "org_id": 5004
+  },
+  {
+    "candidate_id": "ri-house-74",
+    "name": "Alex Finkelman",
+    "chamber": "House",
+    "district": 74,
+    "party": "Democrat",
+    "communities": "Jamestown, Middletown",
+    "email": "rep-finkelman@rilegislature.gov",
+    "org_id": 9400
+  },
+  {
+    "candidate_id": "ri-house-75",
+    "name": "Lauren H. Carson",
+    "chamber": "House",
+    "district": 75,
+    "party": "Democrat",
+    "communities": "Newport",
+    "email": "rep-carson@rilegislature.gov",
+    "org_id": 7868
+  },
+  {
+    "candidate_id": "ri-senate-1",
+    "name": "Jacob E. Bissaillon",
+    "chamber": "Senate",
+    "district": 1,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "sen-bissaillon@rilegislature.gov",
+    "org_id": 9771
+  },
+  {
+    "candidate_id": "ri-senate-2",
+    "name": "Ana B. Quezada",
+    "chamber": "Senate",
+    "district": 2,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "sen-quezada@rilegislature.gov",
+    "org_id": 6919
+  },
+  {
+    "candidate_id": "ri-senate-3",
+    "name": "Samuel D. Zurier",
+    "chamber": "Senate",
+    "district": 3,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "sen-zurier@rilegislature.gov",
+    "org_id": 7084
+  },
+  {
+    "candidate_id": "ri-senate-4",
+    "name": "Stefano V. Famiglietti",
+    "chamber": "Senate",
+    "district": 4,
+    "party": "Democrat",
+    "communities": "North Providence, Providence",
+    "email": "sen-famiglietti@rilegislature.gov",
+    "org_id": 8696
+  },
+  {
+    "candidate_id": "ri-senate-5",
+    "name": "Samuel W. Bell",
+    "chamber": "Senate",
+    "district": 5,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "sen-bell@rilegislature.gov",
+    "org_id": 7857
+  },
+  {
+    "candidate_id": "ri-senate-6",
+    "name": "Tiara T. Mack",
+    "chamber": "Senate",
+    "district": 6,
+    "party": "Democrat",
+    "communities": "Providence",
+    "email": "sen-mack@rilegislature.gov",
+    "org_id": 8980
+  },
+  {
+    "candidate_id": "ri-senate-7",
+    "name": "Frank A. Ciccone III",
+    "chamber": "Senate",
+    "district": 7,
+    "party": "Democrat",
+    "communities": "Providence, Johnston",
+    "email": "sen-ciccone@rilegislature.gov",
+    "org_id": 5221
+  },
+  {
+    "candidate_id": "ri-senate-8",
+    "name": "Lori Urso",
+    "chamber": "Senate",
+    "district": 8,
+    "party": "Democrat",
+    "communities": "Pawtucket",
+    "email": "sen-urso@rilegislature.gov",
+    "org_id": 4672
+  },
+  {
+    "candidate_id": "ri-senate-9",
+    "name": "John P. Burke",
+    "chamber": "Senate",
+    "district": 9,
+    "party": "Democrat",
+    "communities": "West Warwick",
+    "email": "sen-burke@rilegislature.gov",
+    "org_id": 9021
+  },
+  {
+    "candidate_id": "ri-senate-10",
+    "name": "Walter S. Felag Jr.",
+    "chamber": "Senate",
+    "district": 10,
+    "party": "Democrat",
+    "communities": "Warren, Bristol, Tiverton",
+    "email": "sen-felag@rilegislature.gov",
+    "org_id": 1203
+  },
+  {
+    "candidate_id": "ri-senate-11",
+    "name": "Linda L. Ujifusa",
+    "chamber": "Senate",
+    "district": 11,
+    "party": "Democrat",
+    "communities": "Portsmouth, Bristol",
+    "email": "sen-ujifusa@rilegislature.gov",
+    "org_id": 8390
+  },
+  {
+    "candidate_id": "ri-senate-12",
+    "name": "Louis P. DiPalma",
+    "chamber": "Senate",
+    "district": 12,
+    "party": "Democrat",
+    "communities": "Middletown, Little Compton, Newport, Tiverton",
+    "email": "sen-dipalma@rilegislature.gov",
+    "org_id": 5802
+  },
+  {
+    "candidate_id": "ri-senate-13",
+    "name": "Dawn Euer",
+    "chamber": "Senate",
+    "district": 13,
+    "party": "Democrat",
+    "communities": "Newport, Jamestown",
+    "email": "sen-euer@rilegislature.gov",
+    "org_id": 8551
+  },
+  {
+    "candidate_id": "ri-senate-14",
+    "name": "Valarie J. Lawson",
+    "chamber": "Senate",
+    "district": 14,
+    "party": "Democrat",
+    "communities": "East Providence",
+    "email": "sen-lawson@rilegislature.gov",
+    "org_id": 8590
+  },
+  {
+    "candidate_id": "ri-senate-15",
+    "name": "Meghan E. Kallman",
+    "chamber": "Senate",
+    "district": 15,
+    "party": "Democrat",
+    "communities": "Pawtucket, Providence",
+    "email": "sen-kallman@rilegislature.gov",
+    "org_id": 8236
+  },
+  {
+    "candidate_id": "ri-senate-16",
+    "name": "Jonathon Acosta",
+    "chamber": "Senate",
+    "district": 16,
+    "party": "Democrat",
+    "communities": "Central Falls, Pawtucket",
+    "email": "sen-acosta@rilegislature.gov",
+    "org_id": 8279
+  },
+  {
+    "candidate_id": "ri-senate-17",
+    "name": "Thomas J. Paolino",
+    "chamber": "Senate",
+    "district": 17,
+    "party": "Republican",
+    "communities": "Lincoln, North Providence, North Smithfield",
+    "email": "sen-paolino@rilegislature.gov",
+    "org_id": 8395
+  },
+  {
+    "candidate_id": "ri-senate-18",
+    "name": "Robert Britto",
+    "chamber": "Senate",
+    "district": 18,
+    "party": "Democrat",
+    "communities": "East Providence, Pawtucket",
+    "email": "sen-britto@rilegislature.gov",
+    "org_id": 7501
+  },
+  {
+    "candidate_id": "ri-senate-19",
+    "name": "Ryan W. Pearson",
+    "chamber": "Senate",
+    "district": 19,
+    "party": "Democrat",
+    "communities": "Cumberland, Lincoln",
+    "email": "sen-pearson@rilegislature.gov",
+    "org_id": 6606
+  },
+  {
+    "candidate_id": "ri-senate-20",
+    "name": "Brian J. Thompson",
+    "chamber": "Senate",
+    "district": 20,
+    "party": "Democrat",
+    "communities": "Woonsocket, Cumberland",
+    "email": "sen-thompson@rilegislature.gov",
+    "org_id": 9594
+  },
+  {
+    "candidate_id": "ri-senate-21",
+    "name": "Gordon E. Rogers",
+    "chamber": "Senate",
+    "district": 21,
+    "party": "Republican",
+    "communities": "Foster, Coventry, Scituate, West Greenwich",
+    "email": "sen-rogers@rilegislature.gov",
+    "org_id": 6260
+  },
+  {
+    "candidate_id": "ri-senate-22",
+    "name": "David P. Tikoian",
+    "chamber": "Senate",
+    "district": 22,
+    "party": "Democrat",
+    "communities": "Smithfield, North Providence, Lincoln",
+    "email": "sen-tikoian@rilegislature.gov",
+    "org_id": 9058
+  },
+  {
+    "candidate_id": "ri-senate-23",
+    "name": "Jessica de la Cruz",
+    "chamber": "Senate",
+    "district": 23,
+    "party": "Republican",
+    "communities": "North Smithfield, Burrillville, Glocester",
+    "email": "sen-delacruz@rilegislature.gov",
+    "org_id": 8668
+  },
+  {
+    "candidate_id": "ri-senate-24",
+    "name": "Melissa Murray",
+    "chamber": "Senate",
+    "district": 24,
+    "party": "Democrat",
+    "communities": "Woonsocket, North Smithfield",
+    "email": "sen-murray@rilegislature.gov",
+    "org_id": 7832
+  },
+  {
+    "candidate_id": "ri-senate-25",
+    "name": "Andrew R. Dimitri",
+    "chamber": "Senate",
+    "district": 25,
+    "party": "Democrat",
+    "communities": "Johnston",
+    "email": "sen-dimitri@rilegislature.gov",
+    "org_id": 9740
+  },
+  {
+    "candidate_id": "ri-senate-26",
+    "name": "Todd M. Patalano",
+    "chamber": "Senate",
+    "district": 26,
+    "party": "Democrat",
+    "communities": "Cranston",
+    "email": "sen-patalano@rilegislature.gov",
+    "org_id": 9827
+  },
+  {
+    "candidate_id": "ri-senate-27",
+    "name": "Hanna M. Gallo",
+    "chamber": "Senate",
+    "district": 27,
+    "party": "Democrat",
+    "communities": "Cranston, West Warwick",
+    "email": "sen-gallo@rilegislature.gov",
+    "org_id": 4227
+  },
+  {
+    "candidate_id": "ri-senate-28",
+    "name": "Lammis J. Vargas",
+    "chamber": "Senate",
+    "district": 28,
+    "party": "Democrat",
+    "communities": "Cranston, Providence",
+    "email": "sen-vargas@rilegislature.gov",
+    "org_id": 8306
+  },
+  {
+    "candidate_id": "ri-senate-29",
+    "name": "Peter A. Appollonio Jr.",
+    "chamber": "Senate",
+    "district": 29,
+    "party": "Democrat",
+    "communities": "Warwick",
+    "email": "sen-appollonio@rilegislature.gov",
+    "org_id": 9784
+  },
+  {
+    "candidate_id": "ri-senate-30",
+    "name": "Mark McKenney",
+    "chamber": "Senate",
+    "district": 30,
+    "party": "Democrat",
+    "communities": "Warwick",
+    "email": "sen-mckenney@rilegislature.gov",
+    "org_id": 8492
+  },
+  {
+    "candidate_id": "ri-senate-31",
+    "name": "Matthew L. LaMountain",
+    "chamber": "Senate",
+    "district": 31,
+    "party": "Democrat",
+    "communities": "Warwick, Cranston",
+    "email": "sen-lamountain@rilegislature.gov",
+    "org_id": 9397
+  },
+  {
+    "candidate_id": "ri-senate-32",
+    "name": "Pamela J. Lauria",
+    "chamber": "Senate",
+    "district": 32,
+    "party": "Democrat",
+    "communities": "Barrington, Bristol, East Providence",
+    "email": "sen-lauria@rilegislature.gov",
+    "org_id": 8425
+  },
+  {
+    "candidate_id": "ri-senate-33",
+    "name": "Leonidas P. Raptakis",
+    "chamber": "Senate",
+    "district": 33,
+    "party": "Democrat",
+    "communities": "Coventry, West Greenwich",
+    "email": "sen-raptakis@rilegislature.gov",
+    "org_id": 2385
+  },
+  {
+    "candidate_id": "ri-senate-34",
+    "name": "Elaine J. Morgan",
+    "chamber": "Senate",
+    "district": 34,
+    "party": "Republican",
+    "communities": "Hopkinton, Charlestown, Exeter, Richmond, West Greenwich",
+    "email": "sen-morgan@rilegislature.gov",
+    "org_id": 6763
+  },
+  {
+    "candidate_id": "ri-senate-35",
+    "name": "Bridget Valverde",
+    "chamber": "Senate",
+    "district": 35,
+    "party": "Democrat",
+    "communities": "North Kingstown, East Greenwich, South Kingstown",
+    "email": "sen-valverde@rilegislature.gov",
+    "org_id": 8611
+  },
+  {
+    "candidate_id": "ri-senate-36",
+    "name": "Alana M. DiMario",
+    "chamber": "Senate",
+    "district": 36,
+    "party": "Democrat",
+    "communities": "Narragansett, North Kingstown, New Shoreham",
+    "email": "sen-dimario@rilegislature.gov",
+    "org_id": 8800
+  },
+  {
+    "candidate_id": "ri-senate-37",
+    "name": "V. Susan Sosnowski",
+    "chamber": "Senate",
+    "district": 37,
+    "party": "Democrat",
+    "communities": "South Kingstown",
+    "email": "sen-sosnowski@rilegislature.gov",
+    "org_id": 3951
+  },
+  {
+    "candidate_id": "ri-senate-38",
+    "name": "Victoria Gu",
+    "chamber": "Senate",
+    "district": 38,
+    "party": "Democrat",
+    "communities": "Westerly, Charlestown, South Kingstown",
+    "email": "sen-gu@rilegislature.gov",
+    "org_id": 9387
+  }
+]

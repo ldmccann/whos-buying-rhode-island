@@ -1,0 +1,26 @@
+.venv/
+.git/
+
+# Logs
+data/update.log
+data/update_error.log
+
+# Temporary / failure / validation files
+data/contribution_download_failures.json
+data/contribution_validation.json
+data/org_id_failures.json
+
+# Old Q1 / historical snapshots
+data/*_2026_q1.csv
+data/*_2026_q1.json
+data/contributions_2026_q1.json
+data/contributions_all_2026_q1.csv
+data/donor_summary_2026_q1.json
+
+# Website backups
+website/*.backup
+website/*.before-pac-cleanup
+
+# Python cache
+__pycache__/
+*.pyc
