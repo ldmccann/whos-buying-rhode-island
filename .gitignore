@@ -24,3 +24,9 @@ website/*.before-pac-cleanup
 # Python cache
 __pycache__/
 *.pyc
+
+# Private/raw campaign finance source data
+data/contributions/
+data/contributions_all.csv
+data/donor_summary.csv
+data/org_ids.json

@@ -180,13 +180,9 @@ def main():
                     if x
                 )
 
-            address = clean(
-                row.get("Address")
-            )
+            address = ""
 
-            city_st_zip = clean(
-                row.get("CityStZip")
-            )
+            city_st_zip = ""
 
             employer = clean(
                 row.get("EmployerName")

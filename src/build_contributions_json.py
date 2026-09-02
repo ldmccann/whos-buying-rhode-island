@@ -89,10 +89,8 @@ def main():
                 "full_name":
                     row.get("FullName", ""),
 
-                "address":
-                    row.get("Address", ""),
-                "city_state_zip":
-                    row.get("CityStZip", ""),
+                "address": "",
+                "city_state_zip": "",
 
                 "employer":
                     row.get("EmployerName", ""),
