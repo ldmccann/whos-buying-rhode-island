@@ -1154,7 +1154,7 @@ const LOAD_MORE_ROWS = 25;
 
 async function loadData() {
   try {
-    const response = await fetch("../data/contributions_all.json");
+    const response = await fetch("./data/contributions_all.json");
 
     if (!response.ok) {
       throw new Error(
