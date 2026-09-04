@@ -67651,7 +67651,7 @@
           "last_name": "Estrada",
           "address": "",
           "city_state_zip": "",
-          "employer": "Pajaro Valley Community Health Trust",
+          "employer": "LAFCO Santa Cruz County",
           "contribution_count": 3,
           "total_amount": 300.0,
           "first_contribution": "02/12/2026",
@@ -111895,7 +111895,7 @@
           "last_name": "Lopes",
           "address": "",
           "city_state_zip": "",
-          "employer": "Pannone Lopes Devereaux & O'Gara",
+          "employer": "Phenix Capitol Group, LLC",
           "contribution_count": 3,
           "total_amount": 500.0,
           "first_contribution": "03/23/2026",
@@ -204418,7 +204418,7 @@
       "district": "22",
       "party": "Democrat",
       "donor_count": 798,
-      "total_amount": 676606.75,
+      "total_amount": 676481.75,
       "donors": [
         {
           "name": "Solomon Jr, Joseph J",
@@ -205105,18 +205105,6 @@
           "last_contribution": "12/19/2025"
         },
         {
-          "name": "Simon Jr, Fred J",
-          "first_name": "Fred",
-          "last_name": "Simon",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 3,
-          "total_amount": 2250.0,
-          "first_contribution": "02/10/2026",
-          "last_contribution": "12/09/2025"
-        },
-        {
           "name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
           "first_name": "",
           "last_name": "RI STATE ASSOCIATION OF FIREFIGHTERS",
@@ -205127,6 +205115,18 @@
           "total_amount": 2150.0,
           "first_contribution": "02/15/2024",
           "last_contribution": "12/08/2025"
+        },
+        {
+          "name": "Simon Jr, Fred J",
+          "first_name": "Fred",
+          "last_name": "Simon",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 4,
+          "total_amount": 2125.0,
+          "first_contribution": "02/10/2026",
+          "last_contribution": "12/09/2025"
         },
         {
           "name": "Mattiello, Nicholas",
