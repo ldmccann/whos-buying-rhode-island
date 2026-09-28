@@ -58990,8 +58990,8 @@
       "chamber": "House",
       "district": "20",
       "party": "Democrat",
-      "donor_count": 225,
-      "total_amount": 96056.47,
+      "donor_count": 224,
+      "total_amount": 95556.47,
       "donors": [
         {
           "name": "SHEKARCHI, JOE",
@@ -59966,18 +59966,6 @@
           "last_contribution": "04/07/2026"
         },
         {
-          "name": "RI PHYSICIAN ASSISTANTS PAC",
-          "first_name": "",
-          "last_name": "RI PHYSICIAN ASSISTANTS PAC",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 2,
-          "total_amount": 350.0,
-          "first_contribution": "08/18/2026",
-          "last_contribution": "10/04/2022"
-        },
-        {
           "name": "baptista, peter a",
           "first_name": "peter",
           "last_name": "baptista",
@@ -60012,18 +60000,6 @@
           "total_amount": 300.0,
           "first_contribution": "04/05/2022",
           "last_contribution": "04/30/2024"
-        },
-        {
-          "name": "RI EM PAC (Emergency Medicine)",
-          "first_name": "",
-          "last_name": "RI EM PAC (Emergency Medicine)",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 3,
-          "total_amount": 300.0,
-          "first_contribution": "04/14/2023",
-          "last_contribution": "08/08/2026"
         },
         {
           "name": "RI PUBLIC EMPLOYEES' EDUCATION PAC",
@@ -60458,18 +60434,6 @@
           "last_contribution": "06/22/2021"
         },
         {
-          "name": "PROVIDENCE CHAMBER PAC",
-          "first_name": "",
-          "last_name": "PROVIDENCE CHAMBER PAC",
-          "address": "",
-          "city_state_zip": "",
-          "employer": "",
-          "contribution_count": 1,
-          "total_amount": 200.0,
-          "first_contribution": "07/15/2026",
-          "last_contribution": "07/15/2026"
-        },
-        {
           "name": "RHODE ISLAND PARTNERSHIP FOR HOME CARE POLITICAL ACTION COMMITTEE",
           "first_name": "",
           "last_name": "RHODE ISLAND PARTNERSHIP FOR HOME CARE POLITICAL ACTION COMMITTEE",
@@ -60504,6 +60468,18 @@
           "total_amount": 200.0,
           "first_contribution": "10/14/2022",
           "last_contribution": "10/14/2022"
+        },
+        {
+          "name": "RI EM PAC (Emergency Medicine)",
+          "first_name": "",
+          "last_name": "RI EM PAC (Emergency Medicine)",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 2,
+          "total_amount": 200.0,
+          "first_contribution": "04/14/2023",
+          "last_contribution": "06/13/2020"
         },
         {
           "name": "RI FIREFIGHTERS FOR PUBLIC SAFETY",
@@ -60732,6 +60708,18 @@
           "total_amount": 150.0,
           "first_contribution": "04/07/2026",
           "last_contribution": "04/07/2026"
+        },
+        {
+          "name": "RI PHYSICIAN ASSISTANTS PAC",
+          "first_name": "",
+          "last_name": "RI PHYSICIAN ASSISTANTS PAC",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 150.0,
+          "first_contribution": "10/04/2022",
+          "last_contribution": "10/04/2022"
         },
         {
           "name": "RYAN, DANIEL",
@@ -126478,8 +126466,8 @@
       "chamber": "House",
       "district": "26",
       "party": "Democrat",
-      "donor_count": 411,
-      "total_amount": 70460.0,
+      "donor_count": 412,
+      "total_amount": 70560.0,
       "donors": [
         {
           "name": "COVENTRY PROFESSIONAL FIREFIGHTERS PAC",
@@ -128988,6 +128976,18 @@
           "total_amount": 100.0,
           "first_contribution": "03/24/2026",
           "last_contribution": "06/24/2024"
+        },
+        {
+          "name": "Walsh, Madison",
+          "first_name": "Madison",
+          "last_name": "Walsh",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "",
+          "contribution_count": 1,
+          "total_amount": 100.0,
+          "first_contribution": "07/11/2026",
+          "last_contribution": "07/11/2026"
         },
         {
           "name": "Walsh, William",
@@ -291561,7 +291561,7 @@
       "chamber": "Senate",
       "district": "33",
       "party": "Democrat",
-      "donor_count": 381,
+      "donor_count": 382,
       "total_amount": 253034.59,
       "donors": [
         {
@@ -291571,8 +291571,8 @@
           "address": "",
           "city_state_zip": "",
           "employer": "Homemaker",
-          "contribution_count": 8,
-          "total_amount": 9600.0,
+          "contribution_count": 11,
+          "total_amount": 7600.0,
           "first_contribution": "02/11/2022",
           "last_contribution": "12/22/2021"
         },
@@ -291959,6 +291959,18 @@
           "total_amount": 2000.0,
           "first_contribution": "01/18/2026",
           "last_contribution": "01/18/2026"
+        },
+        {
+          "name": "Sattar, Nadeem",
+          "first_name": "Nadeem",
+          "last_name": "Sattar",
+          "address": "",
+          "city_state_zip": "",
+          "employer": "UMAIR LLC",
+          "contribution_count": 2,
+          "total_amount": 2000.0,
+          "first_contribution": "03/01/2026",
+          "last_contribution": "06/25/2026"
         },
         {
           "name": "Taketzis, Stylianos",
